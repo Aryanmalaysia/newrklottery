@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.16px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>RK Lottery </title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link rel="stylesheet" href="/index_files/index-96409872.css">
+    <link rel="stylesheet" href="../assets/css/index-7cb00ae8.css">
+    <link rel="stylesheet" href="../assets/css/Instructions-171cc2e8.css">
+    <link href="/css/wallet/main.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-1.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-2.css" rel="stylesheet" />
+    <link href="/css/wallet/chunk_2-3.css" rel="stylesheet" />
+    <link href="/css/wallet/recharge_styles.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
+        integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+    <style>
+        .msg[data-v-1dcba851] {
+            max-width: 12.8rem;
+            width: 80%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100000
+        }
+
+        .msg .msg-content[data-v-1dcba851] {
+            position: relative;
+            padding: .32rem .66667rem;
+            text-align: center;
+            line-height: .64rem;
+            word-break: break-all;
+            overflow: hidden;
+            font-size: .37333rem;
+            color: #fff;
+            background-color: rgba(0, 0, 0, .8)
+        }
+
+        .v-enter[data-v-1dcba851],
+        .v-leave-to[data-v-1dcba851] {
+            opacity: 0
+        }
+
+        .v-enter-active[data-v-1dcba851] {
+            transition: opacity .5s;
+            animation: bounce-in-data-v-1dcba851 .5s
+        }
+
+        .v-leave-active[data-v-1dcba851] {
+            transition: opacity .3s;
+            animation: bounce-in-data-v-1dcba851 .5s reverse
+        }
+
+        @keyframes bounce-in-data-v-1dcba851 {
+            0% {
+                transform: scale(.4)
+            }
+
+            50% {
+                transform: scale(1.03)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+    </style>
+    <style>
+        /* CSS to style the active (highlighted) list item */
+        .highlight {
+            background-color: #f0f0f0;
+            /* Example background color */
+            border: 1px solid #ccc;
+            /* Example border */
+            /* Add any other styles you want for the active state */
+        }
+
+        /* Additional styling for the list items */
+        #list li {
+            cursor: pointer;
+            /* Make the list items appear clickable */
+            padding: 10px;
+            /* Adjust padding as needed */
+            margin-bottom: 5px;
+            /* Adjust margin as needed */
+        }
+
+        .navbar[data-v-106b99c8] {
+            background: linear-gradient(90deg, rgb(43, 50, 112) 0%, rgb(43, 50, 112) 100%) !important;
+        }
+
+        .mian .selectBox .colorBox[data-v-67caa467] {
+            background: linear-gradient(90deg, #22275b 0%, #22275b 100%) !important;
+        }
+
+        .mian .selectBox .pay-box .list .item .img[data-v-67caa467] {
+            margin: 0 auto .13333rem;
+            width: 1.2rem !important;
+            height: 1.2rem !important;
+        }
+
+        .mian .selectBox .pay-box .list .item .name[data-v-67caa467] {
+            color: #ffffff !important;
+            font-size: .37333rem;
+        }
+
+
+
+        .recharge-tabs {
+            padding: 10px;
+            background-color: #22275b;
+        }
+
+        .recharge-type {
+            width: 95%;
+            margin: auto;
+            margin-bottom: 14px;
+        }
+
+        .recharge-type .tabcontent {
+            display: block;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 10px;
+        }
+
+        .currency {
+            margin-right: 20px;
+        }
+
+        .currency-name {
+            font-weight: bold;
+        }
+
+          .currency-value {
+            margin-left: -2px;
+            font-size: x-large;
+        }
+
+
+        .loading-text {
+            color: gray;
+        }
+
+
+        .recharge-type .recharge-content {
+            margin-top: 10px;
+            box-shadow: 0 0.05333rem 0.21333rem #d0d0ed5c;
+            padding-top: 10px;
+        }
+
+        .recharge-type .recharge-content .selec-channel {
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        .recharge-type .recharge-content .selec-channel img {
+            width: 20px;
+        }
+
+        .recharge-type .recharge-content h4 {
+            margin-left: 10px;
+            color: white;
+        }
+
+        .recharge-type .tabcontent ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .recharge-type .tabcontent ul li {
+            background: #4b53a6;
+            width: 49%;
+            padding: 12px;
+            border-radius: 0.26667rem;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: start;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+            margin-bottom: 0.26667rem;
+            color: white;
+        }
+
+        .mian .selectBox .pay-box .title[data-v-67caa467] {
+            font-size: 0.4rem;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: linear-gradient(90deg, #2979f2 0%, #2aaaf3 100%) !important;
+        }
+    </style>
+
+
+</head>
+
+<body style="font-size: 12px;">
+    <div id="app">
+        <div data-v-67caa467="" class="mian">
+            <!-- Header  -->
+            <div data-v-106b99c8="" data-v-67caa467="" class="navbar">
+                <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/mian'">
+                    <div data-v-106b99c8="" class="bank c-row c-row-middle-center">
+                        <i class="fa-light fa-angle-left fa-fade fa-xl center" style="color: #FFF"></i>
+                    </div>
+                </div>
+                <div data-v-106b99c8="" class="navbar-title"> Deposit </div>
+                <div data-v-106b99c8="" class="navbar-right" onclick="location.href='/wallet/rechargerecord'">
+                    <div data-v-11ffe290="" data-v-106b99c8="" class="c-row">
+                        <i class="fa-fade fa center" style="color: #FFF">
+                            <img data-v-11ffe290="" data-v-106b99c8="" src="/assets/png/tradeHistory-dd8caea2.png"
+                                style="width:.66667rem;height:.66667rem">
+                        </i>
+                    </div>
+                </div>
+            </div>
+            <!-- Header  -->
+
+            <div data-v-67caa467="" class="selectBox">
+                <div data-v-67caa467="" class="colorBox"></div>
+
+                <div data-v-67caa467="" class="txtBox c-row c-row-middle">
+
+                    <div data-v-618c2f5a="" data-v-e0f4cdd7="" class="balanceAssets">
+                        <div data-v-618c2f5a="" class="balanceAssets__header">
+                            <div data-v-618c2f5a="" class="balanceAssets__header__left">
+                                <img data-v-618c2f5a="" src="/assets/png/balance-d5880fa1.png">
+                                Total Balance
+                            </div>
+                        </div>
+                 
+                            <div data-v-8cd483ca="" class="p-l-15">
+                               <div class="header"  style=" margin-bottom: 15px;">
+                                <div class="currency" id="inrCurrency"  style="  margin-right: 22px;">
+                                  <!-- <span class="currency-name">INR :</span> -->
+                                  <span class="currency-value money" id="inrValue">₹<span class="loading-text">Loading...</span></span>
+                                 </div>
+                              
+                                <div class="currency" id="usdtCurrency" style="display:none; margin-right: 22px">
+                                  <!-- <span class="currency-name">USDT :</span> -->
+                                  <span class="currency-value money1" id="usdtValue">$<span class="loading-text">Loading...</span></span>
+                                 </div>
+                              
+                                <div data-v-5d3a4ff1="" role="checkbox" class="van-checkbox" tabindex="0" aria-checked="true" onclick="toggleCheckbox()">
+                                  <div class="van-checkbox__icon van-checkbox__icon--round ">
+                                    <i class="van-badge__wrapper van-icon van-icon-success"></i>
+                                  </div>
+                                  <span class="van-checkbox__label" id="labelText">Convert USDT</span>
+                                </div>
+                              </div>
+                              
+                            </div> 
+
+                    </div>
+
+
+
+                    <div data-v-67caa467="" class="c-row c-row-middle">
+
+
+
+                    </div>
+                </div>
+
+                <div data-v-67caa467="" class="pay-box">
+                    <!-- Payment Methods Label -->
+                    <div data-v-67caa467="" class="title c-row c-row-middle">
+                        <div data-v-67caa467="" class="van-image" style="width: 20px; height: 20px;">
+                            <img src="/images/htmls2.png" class="van-image__img">
+                        </div>
+                        <span data-v-67caa467="" class="m-l-10"> Payment Method </span>
+                    </div>
+
+                    <div data-v-67caa467="" class="list c-row c-flex-warp m-t-10" id="payment_methods_options">
+                        
+                        <div data-v-67caa467="" class="item action" type="upi_gateway1" onclick="showRechargeType('upi')" style="position: relative;">
+                            <!-- Existing UPI X QR content -->
+                            <img data-v-67caa467="" width="30px" height="30px" src="/images/upixqr.png" class="img">
+                            <div data-v-67caa467="" class="name">UPI X QR</div>
+                            <div data-v-67caa467="" class="icon">
+                                <i data-v-67caa467="" class="van-icon van-icon-success" style="color: rgb(255, 255, 255); font-size: 14px;"></i>
+                            </div>
+                        
+                            <!-- New image for top right corner -->
+                            <img data-v-67caa467="" src="/images/5red.png" class="second-img">
+                        </div>
+                        
+
+                        <div data-v-67caa467="" class="item" type="manual_pay" onclick="showRechargeType('manual')" style="position: relative;">
+                            <!-- Existing Bank Transfer content -->
+                            <img data-v-67caa467="" width="20px" height="20px" src="/images/banktransfer.png" class="img">
+                            <div data-v-67caa467="" class="name">Bank Transfer</div>
+                            <div data-v-67caa467="" class="icon">
+                                <i data-v-67caa467="" class="van-icon van-icon-success"
+                                    style="color: rgb(255, 255, 255); font-size: 14px;"></i>
+                            </div>
+                        
+                            <!-- New image for top right corner -->
+                            <img data-v-67caa467="" src="/images/8red.png" class="second-img">
+                        </div>
+                        
+
+                        <div data-v-67caa467="" class="item " type="upi_gateway1"
+                        onclick="showRechargeType('upi')">
+                        <img data-v-67caa467="" width="30px" height="30px" src="/images/ewallet.png" class="img">
+                        <div data-v-67caa467="" class="name">E-Wallet</div>
+                        <div data-v-67caa467="" class="icon">
+                            <i data-v-67caa467="" class="van-icon van-icon-success"
+                                style="color: rgb(255, 255, 255); font-size: 14px;"> </i>
+                        </div>
+                    </div>
+                    
+                        
+
+                        <div data-v-67caa467="" class="item" type="usdt_manual" onclick="showRechargeType('usdt')">
+                            <img data-v-67caa467="" width="20px" height="20px" src="/images/recharge_TRANSFER3.png"
+                                class="img">
+                            <div data-v-67caa467="" class="name">USDT</div>
+
+                            <div data-v-67caa467="" class="icon">
+                                <i data-v-67caa467="" class="van-icon van-icon-success"
+                                    style="color: rgb(255, 255, 255); font-size: 14px;"> </i>
+                            </div>
+                        </div>
+
+
+                        
+
+
+                    </div>
+                </div>
+                <div class="recharge-type recharge_type_section" style="display: block;">
+                    <div class="recharge-content">
+                        <div class="selec-channel">
+                            <img src="/images/quickpay.png" alt="" />
+                            <h4>Select Channel</h4>
+                        </div>
+                        <div id="tab1" class="tabcontent recharge-tabs" toggleChannels>
+                            <ul id="upi_list">
+                                
+                                <li onclick="changeActive(this)" id="sun_pay" class="highlight active" data-min="300" data-max="100000">
+                                    <p>SUN-Pay</p>
+                                    <p>Balance: 300 - 50K</p>
+                                </li>
+                                
+
+                                <li onclick="changeActive(this)" id="upi_pay" data-min="300" data-max="50000">
+                                    <p>Manual-pay</p>
+                                    <p>Balance: 300 - 50K</p>
+                                </li>
+
+
+
+                                <li onclick="changeActive(this)" id="ff_pay"   data-min="300" data-max="50000">
+                                    <p>FFpay-upi</p>
+                                    <p>Balance: 500 - 50K</p>
+                                </li>
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="recharge-type usdt_channels" style="display: none;" class="m-t-10">
+                    <div class="recharge-content">
+                        <div class="selec-channel">
+                            <img src="/images/quickpay.png" alt="" />
+                            <h4>Select USDT Channel</h4>
+                        </div>
+
+                        <div id="tab1 active" class="tabcontent recharge-tabs">
+                            <ul id="usdt_list">
+                                <li onclick="changeActiveUsdt(this)" id="sun_pay" class="highlight active" data-min="300"
+                                    data-max="100000">
+                                    <p>trx</p>
+                                    <p>Balance: 300 - 50K</p>
+                                </li>
+                                <li onclick="changeActiveUsdt(this)" id="ty_pay" data-min="300" data-max="50000">
+                                    <p>bnb trx</p>
+                                    <p>Balance: 500 - 50K</p>
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div data-v-67caa467="" class="pay-box">
+                    <div data-v-67caa467="">
+                        <div data-v-67caa467="">
+                            <div class="usdt_channels" style="display: none;">
+                                <div data-v-67caa467="" class="title c-row c-row-middle c-row-between">
+                                    <div data-v-67caa467="" class="c-row">
+                                        <div data-v-67caa467="" class="van-image" style="width: 20px; height: 20px;">
+                                            <img src="/images/htmls2.png" class="van-image__img">
+                                        </div>
+                                        <span data-v-67caa467="" id="usdt" class="m-l-10">USDT</span>
+                                    </div>
+                                </div>
+
+                                <div data-v-67caa467="" class="box numberSize c-row c-row-between c-row-middle p-l-10">
+                                    <div data-v-67caa467="" id="inr_input" class="fuhao">$</div>
+                                    <div data-v-67caa467="" class="input van-cell van-field">
+                                        <div class="van-cell__value van-cell__value--alone van-field__value">
+                                            <div class="van-field__body">
+                                                <input type="tel" id="money_amount_input_usdt" value="5"
+                                                    inputmode="numeric" name="amount"
+                                                    placeholder="Please enter the amount" class="van-field__control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="quick_money_options_Usdt" data-v-67caa467=""
+                                    class="list m-t-10 c-row c-row-between c-flex-warp">
+                                    <div data-v-67caa467="" data-money-Usdt="5" class="li action">
+                                        <span data-v-67caa467="" class="number">5</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-Usdt="50" class="li">
+                                        <span data-v-67caa467="" class="number">50</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-Usdt="100" class="li">
+                                        <span data-v-67caa467="" class="number">100</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-Usdt="200" class="li">
+                                        <span data-v-67caa467="" class="number">200</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-Usdt="500" class="li">
+                                        <span data-v-67caa467="" class="number">500</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-Usdt="1000" class="li">
+                                        <span data-v-67caa467="" class="number">1000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="manual_pay_section" style="display: none;">
+                                <div data-v-67caa467="" class="title c-row c-row-middle c-row-between">
+                                    <div data-v-67caa467="" class="c-row">
+                                        <div data-v-67caa467="" class="van-image" style="width: 20px; height: 20px;">
+                                            <img src="/images/htmls2.png" class="van-image__img">
+                                        </div>
+                                        <span data-v-67caa467="" id="Inr" class="m-l-10">INR</span>
+                                    </div>
+                                </div>
+
+                                <div data-v-67caa467="" class="box numberSize c-row c-row-between c-row-middle p-l-10">
+                                    <div data-v-67caa467="" id="inr_input" class="fuhao">₹</div>
+                                    <div data-v-67caa467="" class="input van-cell van-field">
+                                        <div class="van-cell__value van-cell__value--alone van-field__value">
+                                            <div class="van-field__body">
+                                                <input type="tel" id="money_amount_input_Bank" value="1000"
+                                                    inputmode="numeric" name="amount"
+                                                    placeholder="Please enter the amount" class="van-field__control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="quick_money_options_Bank" data-v-67caa467=""
+                                    class="list m-t-10 c-row c-row-between c-flex-warp">
+                                    <div data-v-67caa467="" data-money-Bank="1000" class="li action">
+                                        <span data-v-67caa467="" class="number">1000</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-Bank="3000" class="li">
+                                        <span data-v-67caa467="" class="number">3000</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-Bank="5000" class="li">
+                                        <span data-v-67caa467="" class="number">5000</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-Bank="15000" class="li">
+                                        <span data-v-67caa467="" class="number">15000</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-Bank="20000" class="li">
+                                        <span data-v-67caa467="" class="number">20000</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-Bank="45000" class="li">
+                                        <span data-v-67caa467="" class="number">45000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recharge_type_section" style="display: block;">
+                                <div data-v-67caa467="" class="title c-row c-row-middle c-row-between">
+                                    <div data-v-67caa467="" class="c-row">
+                                        <div data-v-67caa467="" class="van-image" style="width: 20px; height: 20px;">
+                                            <img src="/images/htmls2.png" class="van-image__img">
+                                        </div>
+                                        <span data-v-67caa467="" id="inr" class="m-l-10">INR</span>
+                                    </div>
+                                </div>
+                                <div data-v-67caa467="" class="box numberSize c-row c-row-between c-row-middle p-l-10">
+                                    <div data-v-67caa467="" id="inr_input" class="fuhao">₹</div>
+                                    <div data-v-67caa467="" class="input van-cell van-field">
+                                        <div class="van-cell__value van-cell__value--alone van-field__value">
+                                            <div class="van-field__body">
+                                                <input type="tel" id="money_amount_input_inr" value="300"
+                                                    inputmode="numeric" name="amount"
+                                                    placeholder="Please enter the amount" class="van-field__control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="quick_money_options_inr" data-v-67caa467=""
+                                    class="list m-t-10 c-row c-row-between c-flex-warp">
+                                    <div data-v-67caa467="" data-money-inr="300" class="li action">
+                                        <span data-v-67caa467="" class="number">300</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-inr="500" class="li">
+                                        <span data-v-67caa467="" class="number">500</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-inr="850" class="li">
+                                        <span data-v-67caa467="" class="number">850</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-inr="1000" class="li">
+                                        <span data-v-67caa467="" class="number">1K</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-inr="5000" class="li">
+                                        <span data-v-67caa467="" class="number">5K</span>
+                                    </div>
+                                    <div data-v-67caa467="" data-money-inr="10000" class="li">
+                                        <span data-v-67caa467="" class="number">10k</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-v-67caa467="" class="btn-list c-row c-row-center m-t-30">
+                                <div data-v-67caa467="" class="item flex-cover">
+
+                                    <button data-v-67caa467="" onclick="handleDepositFund()"
+                                        class="next-btn van-button van-button--default van-button--normal van-button--block van-button--round"
+                                        id="deposit_fund_btn">
+                                        <div data-v-67caa467="" class="van-button__content">
+                                            <span data-v-67caa467="" class="van-button__text">Deposit Fund</span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <style>
+                                .loading-image {
+                                    position: fixed;
+                                    margin-top: -100px;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                }
+                            </style>
+
+                            <div id="loadingImage" class="loading-image" style="display:none;">
+                                <img src="/images/loading.gif" alt="Loading..." width="100" height="100">
+                            </div>
+                            </br>
+                            <div data-v-832238e6="" data-v-e0f4cdd7="" class="Recharge__container-intro">
+                                <div data-v-832238e6="" class="Recharge__container-intro__title">
+                                    <img data-v-832238e6="" src="/assets/png/bookicon-12cde4d4.png" alt="">
+                                    <p data-v-832238e6="">
+                                        Recharge instructions
+                                    </p>
+                                </div>
+                                <div data-v-832238e6="" class="Recharge__container-intro__lists recharge_type_section"
+                                    style="display: block;">
+                                    <!---->
+                                    <!---->
+                                    <!---->
+                                    <div data-v-832238e6="" class="item">
+                                        <p data-v-832238e6="">
+                                            The Bank payment gateway offers an additional 5% bonus on Every deposit.
+                                        </p>
+                                        <p data-v-832238e6="">
+                                            If the transfer time is up, please fill out the deposit form again.
+                                        </p>
+                                        <p data-v-832238e6="">
+                                            The transfer amount must match the order you created, otherwise the money
+                                            cannot be credited successfully.
+                                        </p>
+                                        <p data-v-832238e6="">
+                                            If you transfer the wrong amount, our company will not be responsible
+                                            for the lost amount!
+                                        </p>
+                                        <!---->
+                                        <p data-v-832238e6="">
+                                            Note: do not cancel the deposit order after the money has been transferred.
+                                        </p>
+                                    </div>
+                                    <!---->
+                                    <!---->
+                                    <!---->
+                                    <!---->
+                                </div>
+
+                                <div data-v-832238e6="" class="Recharge__container-intro__lists usdt_channels"
+                                    style="display: none;">
+                                    <div data-v-832238e6="" class="item usdt">
+                                        <p data-v-832238e6="">
+                                            The USDT payment gateway offers an additional 5% bonus on every deposit.
+                                        </p>
+                                        <p data-v-832238e6="">
+                                            If the transfer time is up, please fill out the deposit form again.
+                                        </p>
+                                        <p data-v-832238e6="">
+                                            The transfer amount must match the order you created, otherwise the money
+                                            cannot be credited successfully.
+                                        </p>
+                                        <p data-v-832238e6="">
+                                            If you transfer the wrong amount, our company will not be responsible for
+                                            the lost amount!
+                                        </p>
+                                        <p data-v-832238e6="">
+                                            Note: do not cancel the deposit order after the money has been transferred.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div data-v-832238e6="" data-v-e0f4cdd7=""  class="Recharge__container-intro manual_pay_section" style="display:none;">
+
+                                    <div data-v-832238e6="" class="Recharge__container-intro__lists imps_channels">
+                                        <div data-v-832238e6="" class="item imps">
+
+                                            <p data-v-832238e6="">
+                                                Please ensure the beneficiary details are correct to avoid delays.
+                                            </p>
+                                            <p data-v-832238e6="">
+                                                IMPS transfers are processed instantly.
+                                            </p>
+                                            <p data-v-832238e6="">
+                                                Note: Additional IMPS instructions can be added here.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="previous_payment_background" id="previous_payment_popup">
+            <div class="previous_payment_popup">
+                <h3 class="previous_payment_popup_message">You have a pending payment left what do you want to do with
+                    that?
+                </h3>
+                <button class="pay_now" id="pay_now">Pay Now</button>
+                <button class="cancel_payment" id="cancel_payment">Cancel and Create New Deposit</button>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/js/client.js"></script>
+        <script>
+            document.getElementById("deposit_fund_btn").addEventListener("click", function (event) {
+                event.preventDefault();
+                document.getElementById("loadingImage").style.display = "block";
+                setTimeout(function () {
+                    document.getElementById("loadingImage").style.display = "none";
+                }, 5000);
+            });  
+        </script>
+
+        <script>
+                    let MoneyAmountInput = document.querySelector("#money_amount_input_inr")
+                    let MoneyAmountInputUsdt = document.querySelector("#money_amount_input_usdt")
+                    let MoneyAmountInputBank = document.querySelector("#money_amount_input_Bank")
+
+                         let QuickMoneyOptionsInr = document.querySelector("#quick_money_options_inr")
+                        let QuickMoneyOptionsUsdt = document.querySelector("#quick_money_options_Usdt")
+                        let QuickMoneyOptionsBank = document.querySelector("#quick_money_options_Bank")
+
+
+const handleUSDTPaymentRequest = async (moneyAmount) => {
+ window.location.href = `/wallet/paynow/manual_usdt?am=${moneyAmount}`
+            }
+ 
+            let selectedPaymentMethod = ''
+            function showRechargeType(paymentType) {
+                var inrChannelsElements = document.getElementsByClassName('recharge_type_section');
+                for (var i = 0; i < inrChannelsElements.length; i++) {
+                    if (paymentType === 'upi') {
+                        inrChannelsElements[i].style.display = 'block';
+
+                        Array.from(QuickMoneyOptionsInr.children).forEach((child) => {
+                    child.removeEventListener("click", handleQuickMoneyInr(child))
+                    child.addEventListener("click", handleQuickMoneyInr(child))
+                })
+                    } else {
+                        inrChannelsElements[i].style.display = 'none';
+                    }
+                }
+                 var usdtChannelsElements = document.getElementsByClassName('usdt_channels');
+                for (var i = 0; i < usdtChannelsElements.length; i++) {
+                    if (paymentType === 'usdt') {
+                        usdtChannelsElements[i].style.display = 'block';
+
+                        Array.from(QuickMoneyOptionsUsdt.children).forEach((child) => {
+                    child.removeEventListener("click", handleQuickMoneyUsdt(child))
+                    child.addEventListener("click", handleQuickMoneyUsdt(child))
+                })
+                    } else {
+                        usdtChannelsElements[i].style.display = 'none';
+                    }
+                }
+
+                var manualChannelsElements = document.getElementsByClassName('manual_pay_section');
+                for (var i = 0; i < manualChannelsElements.length; i++) {
+                    if (paymentType === 'manual') {
+                        Array.from(QuickMoneyOptionsBank.children).forEach((child) => {
+                    child.removeEventListener("click", handleQuickMoneyBank(child))
+                    child.addEventListener("click", handleQuickMoneyBank(child))
+                })
+                        manualChannelsElements[i].style.display = 'block';
+                    } else {
+                        manualChannelsElements[i].style.display = 'none';
+                    }
+                }
+            }
+
+            var depositButton = document.getElementById("deposit_fund_btn");
+            function toggleDepositButtonAndLoadingImage(enable) {
+                // depositButton.disabled = enable;
+            }
+            const handleManualUPIPaymentRequest = async (moneyAmount) => {
+            window.location.href = `/wallet/paynow/manual_upi?am=${moneyAmount}`
+        }
+            const alertMess = (text) => {
+                const msg = document.createElement('div');
+                msg.setAttribute('data-v-1dcba851', '');
+                msg.className = 'msg';
+
+                const msgContent = document.createElement('div');
+                msgContent.setAttribute('data-v-1dcba851', '');
+                msgContent.className = 'msg-content v-enter-active v-enter-to';
+                msgContent.style = '';
+                msgContent.textContent = text || 'please enter valid deatils';
+
+                msg.appendChild(msgContent);
+                document.body.appendChild(msg);
+
+                setTimeout(() => {
+                    msgContent.classList.remove('v-enter-active', 'v-enter-to');
+                    msgContent.classList.add('v-leave-active', 'v-leave-to');
+
+                    setTimeout(() => {
+                        document.body.removeChild(msg);
+                    }, 100);
+                }, 1000);
+            }
+
+            const PaymentMethodsMap = {
+                WOW_PAY: "wow_pay",
+                MANUAL_PAY: "manual_pay",
+                USDT_MANUAL: "usdt_manual",
+                SUNPAY: 'sun_pay',
+                FFPAY: 'ff_pay',
+                UPI: 'upi_pay',
+                TYPAY: 'upi_pay',
+            }
+
+            function changeActive(element) {
+                var listItems = document.querySelectorAll('#upi_list li');
+                listItems.forEach(function (item) {
+                    item.classList.remove('active');
+                    item.classList.remove('highlight');
+                });
+                element.classList.add('active');
+
+                element.classList.add('highlight');
+                var min = parseInt(element.getAttribute('data-min'));
+                var max = parseInt(element.getAttribute('data-max'));
+            }
+
+            function changeActiveUsdt(element) {
+                var listItems = document.querySelectorAll('#usdt_list li');
+                listItems.forEach(function (item) {
+                    item.classList.remove('active');
+                    item.classList.remove('highlight');
+                });
+                element.classList.add('active');
+
+                element.classList.add('highlight');
+                var min = parseInt(element.getAttribute('data-min'));
+                var max = parseInt(element.getAttribute('data-max'));
+            }
+
+            const handleSunpayGatewayPaymentRequest = async (moneyAmount) => {
+                document.getElementById("loadingImage").style.display = "block";
+                toggleDepositButtonAndLoadingImage(true);
+                
+                if (moneyAmount < 300) {
+                    alertMessage("Minimum deposit is 300");
+                    return; // Exit the function if the condition is met
+                }
+
+                const response = await axios.post("/wallet/paynow/sunpay", {
+                    money: moneyAmount
+                })
+
+                const data = response?.data
+
+                if (data === undefined || data === null) {
+                    alertMessage("Something went wrong!")
+                    return
+                }
+
+                if (data?.status === false) {
+                    alertMessage(data?.message)
+                    return
+                }
+                const newTab = window.open(data?.url, '_blank');
+                toggleDepositButtonAndLoadingImage(false);
+
+                document.getElementById("loadingImage").style.display = "none";
+
+                const checkTabClosed = setInterval(() => {
+                    if (newTab && newTab.closed) {
+                        clearInterval(checkTabClosed);
+                        window.location.href = '/wallet/rechargerecord';
+                    }
+                }, 500);
+            }
+            const handleFFPayGatewayPaymentRequest = async (moneyAmount) => {
+                document.getElementById("loadingImage").style.display = "block";
+                toggleDepositButtonAndLoadingImage(true);
+
+                const response = await axios.post("/wallet/paynow/ffpay", {
+                    money: moneyAmount
+                })
+
+                const data = response?.data
+
+                if (data === undefined || data === null) {
+                    alertMessage("Something went wrong!")
+                    return
+                }
+
+                if (data?.status === false) {
+                    alertMessage(data?.message)
+                    return
+                }
+                const newTab = window.open(data?.url, '_blank');
+                toggleDepositButtonAndLoadingImage(false);
+
+                document.getElementById("loadingImage").style.display = "none";
+
+                const checkTabClosed = setInterval(() => {
+                    if (newTab && newTab.closed) {
+                        clearInterval(checkTabClosed);
+                        window.location.href = '/wallet/rechargerecord';
+                    }
+                }, 500);
+            }
+            const handleSelectPaymentGateway = (event) => {
+                Array.from(PaymentMethodOptions.children).forEach((child) => {
+                    child.classList.remove("action")
+                    if (event.currentTarget.getAttribute("type") === child.getAttribute("type")) {
+                        child.classList.add("action")
+                    }
+                }) 
+            }
+            let PaymentMethodOptions = document.querySelector("#payment_methods_options")
+
+            Array.from(PaymentMethodOptions.children).forEach((child) => {
+                if (Array.from(child.classList).includes("disabled")) return
+                child.addEventListener("click", handleSelectPaymentGateway)
+            })
+
+            const handleDepositFund = () => {
+  let paymentMethodList = Array.from(PaymentMethodOptions.children).filter((item) => {
+    return !item.classList.contains("disabled");
+  });
+
+  let currentPaymentMethod = paymentMethodList.find((item) => {
+    return item.classList.contains("action");
+  });
+
+  const moneyInr = document.querySelector("#money_amount_input_inr");
+  const moneyUsdt = document.querySelector("#money_amount_input_usdt");
+  const moneyBank = document.querySelector("#money_amount_input_Bank");
+
+  if (!currentPaymentMethod) {
+    alertMess("Please select a payment method.");
+    return;
+  }
+
+  let amount;
+  switch (currentPaymentMethod.getAttribute("type")) {
+    case "upi_gateway":
+      const activeItemUpi = document.querySelector("#upi_list li.active");
+      amount = parseInt(moneyInr.value);
+
+      if (isNaN(amount)) {
+        alertMess("Please enter a valid amount.");
+      } else if (amount < 300 || amount > 100000) {
+        alertMess("Amount must be between 300 and 100000 (inclusive).");
+      } else if (!activeItemUpi) {
+        alertMess("Please select a channel.");
+      } else {
+        switch (activeItemUpi.getAttribute("id")) {
+          case PaymentMethodsMap.SUNPAY:
+            //handleSunpayGatewayPaymentRequest(amount);
+            //handleManualUPIPaymentRequest(amount);
+            window.location.href = `/wallet/paynow/upi_autogateway?am=${amount}`;
+            break;
+          case PaymentMethodsMap.FFPAY:
+            //handleFFPayGatewayPaymentRequest(amount);
+           // handleManualUPIPaymentRequest(amount);
+           window.location.href = `/wallet/paynow/upi_autogateway?am=${amount}`;
+            break;
+          case PaymentMethodsMap.UPI:
+           // handleManualUPIPaymentRequest(amount);
+           window.location.href = `/wallet/paynow/upi_autogateway?am=${amount}`;
+            break;
+          case PaymentMethodsMap.TYPAY:
+            //handleSunpayGatewayPaymentRequest(amount);
+            //handleManualUPIPaymentRequest(amount);
+            window.location.href = `/wallet/paynow/upi_autogateway?am=${amount}`;
+            break;
+          default:
+            alertMess("Select channel.");
+            break;
+        }
+      }
+      break;
+
+    case "usdt_manual":
+      amount = parseInt(moneyUsdt.value);
+      if (isNaN(amount)) {
+        alertMess("Please enter a valid amount.");
+      } else if (amount < 5 || amount > 10000000000) {
+        alertMess("Amount must be between 5 and 10000000000 (inclusive).");
+      } else {
+        handleUSDTPaymentRequest(amount);
+      }
+      break;
+
+    case "manual_pay":
+      amount = parseInt(moneyBank.value);
+      if (isNaN(amount)) {
+        alertMess("Please enter a valid amount.");
+      } else if (amount < 300 || amount > 10000000000) {
+        alertMess("Amount must be between 300 and 10000000000 (inclusive).");
+      } else {
+        handleBankPaymentRequest(amount);
+      }
+      break;
+
+    default:
+      amount = moneyInr.value;
+      handleManualUPIPaymentRequest(amount);
+      
+      break;
+  }
+};
+
+const handleBankPaymentRequest = (moneyAmount) => {
+  window.location.href = `/wallet/paynow/manual_bank?am=${moneyAmount}`;
+};
+
+
+            const handleQuickMoneyInr = (item) => (event) => {
+            const amount = parseInt(item.getAttribute("data-money-inr")) 
+            inputMoney = amount
+            MoneyAmountInput.value = amount 
+            Array.from(QuickMoneyOptionsInr.children).forEach((child) => {
+                child.classList.remove("action")
+            }) 
+            item.classList.add("action")
+        }
+
+        const handleQuickMoneyUsdt = (item) => (event) => {
+            const amount = parseInt(item.getAttribute("data-money-Usdt")) 
+            inputMoney = amount
+            MoneyAmountInputUsdt.value = amount 
+            Array.from(QuickMoneyOptionsUsdt.children).forEach((child) => {
+                child.classList.remove("action")
+            }) 
+            item.classList.add("action")
+        }
+
+        const handleQuickMoneyBank = (item) => (event) => {
+            const amount = parseInt(item.getAttribute("data-money-Bank")) 
+            inputMoney = amount
+            MoneyAmountInputBank.value = amount 
+            Array.from(QuickMoneyOptionsBank.children).forEach((child) => {
+                child.classList.remove("action")
+            }) 
+            item.classList.add("action")
+        }
+               // Below code will run on Page Load 
+      
+            showRechargeType('upi')
+
+
+            
+            // let MoneyAmountDisplay = document.querySelector("#money_amount_display")
+            // 
+
+
+
+            // let inputMoney = 0
+
+
+            
+
+
+
+            // const handleNumericInput = (event) => {
+            //     const key = event.keyCode;
+            //     // Only allow numbers to be entered
+            //     if (key < 48 || key > 57) {
+            //         event.preventDefault();
+            //     }
+            // }
+
+            // const handleMoneyAmountInput = (event) => {
+            //     inputMoney = parseInt(MoneyAmountInput.value)
+            // }
+
+            // const handleQuickMoney = (item) => (event) => {
+            //     const amount = parseInt(item.getAttribute("data-money"))
+
+            //     inputMoney = amount
+            //     MoneyAmountInput.value = amount
+
+            //     Array.from(QuickMoneyOptions.children).forEach((child) => {
+            //         child.classList.remove("action")
+            //     })
+
+            //     item.classList.add("action")
+            // }
+
+
+            // function toggleChannels(channel) {
+            //     const sunpay1 = document.querySelector('#tab1');
+            //     const sunpay2 = document.querySelector('#tab2');
+            //     const sunpay3 = document.querySelector('#tab3');
+
+            //     sunpay1.style.display = 'none';
+            //     sunpay2.style.display = 'none';
+            //     sunpay3.style.display = 'none';
+
+            //     if (channel === 'sunpay1') {
+            //         sunpay1.style.display = 'block';
+            //     } else if (channel === 'sunpay2') {
+            //         sunpay2.style.display = 'block';
+            //     } else if (channel === 'sunpay3') {
+            //         sunpay3.style.display = 'block';
+            //     }
+            // }
+
+
+            // const handleUPIGatewayPaymentRequest = async (moneyAmount) => {
+
+            //     const response = await axios.post("/wallet/paynow/upi", {
+            //         money: moneyAmount
+            //     })
+
+            //     const data = response?.data
+
+            //     if (data === undefined || data === null) {
+            //         alertMess("Something went wrong!")
+            //         return
+            //     }
+
+            //     if (data?.status === false) {
+            //         alertMess(data?.message)
+            //         return
+            //     }
+
+            //     window.location.href = data?.url
+            // }
+
+
+
+            // const handleWowPayPaymentRequest = async (moneyAmount) => {
+            //     try {
+            //         const response = await axios.post(`/wallet/paynow/wowpay?money=${moneyAmount}`)
+
+            //         const data = response?.data
+
+            //         if (data === undefined || data === null) {
+            //             alertMess("Something went wrong!")
+            //             return
+            //         }
+
+
+            //         if (data?.status === false) {
+            //             alertMess(data?.message)
+            //             return
+            //         }
+
+            //         window.location.href = data?.payment_url
+            //     } catch (error) {
+            //         console.log(error)
+            //     }
+            // }
+
+            // const handleManualUSDTPaymentRequest = async (moneyAmount) => {
+            //     window.location.href = `/wallet/paynow/manual_usdt?am=${moneyAmount}`
+            // }
+
+            // const handleManualUPIPaymentRequest = async (moneyAmount) => {
+            //     window.location.href = `/wallet/paynow/manual_upi?am=${moneyAmount}`
+            // }
+
+
+         
+            // handleCheckAndSelectPaymentMethod()
+            // handleMoneyAmountInput()
+            // // --------------------------------
+
+            // // Even Listeners
+            // 
+
+
+
+            // MoneyAmountInput.addEventListener("input", handleMoneyAmountInput)
+
+            // MoneyAmountInput.addEventListener("keypress", handleNumericInput);
+
+        </script>
+            <script>
+                fetch('/api/webapi/GetUserInfo')
+        .then(response => response.json())
+        .then(data => {
+          if (data.status === false) {
+            unsetCookie();
+            return false;
+          };
+          $('.money1').text(`$ ${data.data.money_user_usdt}`);
+          $('.money').text(`₹ ${new Intl.NumberFormat().format(data.data.money_user)}`);
+          $('.infoName .name').text(data.data.name_user);
+          $('.infoName .id').text(`UID   | ${data.data.id_user}`);
+          $('.infoName .id').append('<img width="18px" height="15px" src="/images/copy.png" class="m-l-5">');
+          $('.infoName .id').attr('data-clipboard-text', data.data.id_user);
+          $('.infoName .number').text(`Mobile Number: +91 ${data.data.phone_user.slice(0, 2)}****${data.data.phone_user.slice(-4)}`);
+    
+          // Update INR balance
+          $('#balance_inr_show').text(`₹ ${new Intl.NumberFormat().format(data.data.money_user)}`);
+          $('#balance_inr').css('display', 'none');
+          $('#balance_inr_show').css('display', 'inline');
+    
+          // Update USDT balance
+          $('#balance_usdt_show').text(`$ ${data.data.money_user_usdt}`);
+          $('#balance_usdt').css('display', 'none');
+          $('#balance_usdt_show').css('display', 'inline'); 
+        });
+      
+                let isChecked = true;   
+                function toggleCheckbox() {
+                  const checkbox = document.querySelector('.van-checkbox');
+                  const icon = checkbox.querySelector('.van-checkbox__icon');
+                  const inrCurrency = document.getElementById('inrCurrency');
+                  const usdtCurrency = document.getElementById('usdtCurrency');
+                  const labelText = document.getElementById('labelText');
+              
+                  isChecked = !isChecked;
+                  checkbox.setAttribute('aria-checked', isChecked.toString());
+              
+                  if (!isChecked) {
+                    icon.classList.add('van-checkbox__icon--checked');
+                    usdtCurrency.style.display = 'block';
+                    inrCurrency.style.display = 'none';
+                    labelText.textContent = 'Convert INR';
+                     
+                  } else {
+                    icon.classList.remove('van-checkbox__icon--checked');
+                    inrCurrency.style.display = 'block';
+                    usdtCurrency.style.display = 'none';
+                    labelText.textContent = 'Convert USDT'; 
+                  }
+                }
+              </script>
+</body>
+
+</html>

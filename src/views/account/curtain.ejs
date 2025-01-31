@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" data-dpr="1" style="font-size: 40px;">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>RK Lottery </title>
+    <link rel="stylesheet" href="/index_files/index-96409872.css">
+    <link rel="stylesheet" href="/index_files/modules-96c1e775.css">
+    <link rel="stylesheet" href="/index_files/page-activity-d48e62db.css">
+    <link rel="stylesheet" href="/index_files/page-home-58543d87.css">
+    <link rel="stylesheet" href="/index_files/page-login-ef3d1f88.css">
+    <link rel="stylesheet" href="/index_files/page-main-ff2e7571.css">
+    <link rel="stylesheet" href="/index_files/index-98687087.css">
+
+    <style>
+        .curtain {
+            width: 400px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .curtain img {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .md-text {
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .md-title {
+            width: 100%;
+            max-width: 300px;
+            margin-top: -80px;
+        }
+
+        .gradient-div {
+            background: linear-gradient(to bottom, rgba(35,42,96,255), rgba(71,117,210,255));
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body style="font-size: 12px">
+    <div class="curtain gradient-div">
+        <div>
+            <img src="/bg_image.png" alt="loading">
+            <h2 class="md-text">Withdraw fast, safe and stable</h2>
+        </div>
+        <img src="/bg_text.png" class="md-title" alt="loading">
+    </div>
+</body>
+
+<script>
+    $(document).ready(function() {
+        var queryString = window.location.search;
+        var queryParams = new URLSearchParams(queryString);
+    
+        setTimeout(function() {
+            window.location.href = `/${queryParams.get('next')}`;
+        }, 2400);
+    });
+</script>
+
+</html>

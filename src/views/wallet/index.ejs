@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.16px;">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="csrf-token" content="" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="noindex,nofollow">
+  <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+  <title>RK Lottery </title>
+  <link href="/css/wallet/main.css" rel="stylesheet" />
+  <link href="/css/wallet/chunk_2-1.css" rel="stylesheet" />
+  <link href="/css/wallet/chunk_2-2.css" rel="stylesheet" />
+  <link href="/css/wallet/chunk_2-3.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      background-color: #090909;
+      padding: 0;
+      margin: 0;
+    }
+
+    #image_box {
+      width: 100%;
+      gap: 0.28rem;
+    }
+
+    #image_box .images_21 {
+      width: 25%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: stretch;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+      gap: 0.13333rem;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      padding: 10px; 
+      border-radius: 5px;
+    }
+
+    .currency {
+      display: flex;
+      align-items: center;
+    }
+
+    .currency-name {
+      font-weight: bold;
+    }
+
+    currency-value {
+    margin-left: 5px;
+    font-size: large;
+}
+
+    .loading-text {
+      color: gray;
+    }
+
+    .spacer {
+      flex: 1;
+      /* Takes up remaining space */
+    }
+
+    .toggle-label {
+      margin-left: 10px;
+      /* Adjust margin as needed */
+    }
+
+    .toggle-label input {
+      margin-right: 5px;
+      /* Adjust margin as needed */
+    }
+
+
+
+    #image_box .images_21 img {
+      width: 1rem;
+      margin-left: 1vw;
+      box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 0.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #image_box .images_21 p {
+      text-align: center;
+      color: white;
+      font-weight: 500;
+      font-family: inherit;
+    }
+
+    @media (max-width:600px) {
+      #image_box .images_21 img {
+        width: 1rem;
+        margin-left: 5vw;
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 0.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .mian .wallet-user[data-v-7b283485] {
+      padding: 0.53333rem 0.8rem 3.2rem;
+      width: 100%;
+      background: -webkit-linear-gradient(left, #61a9ff 0%, #59b0ea 100%);
+      background: linear-gradient(90deg, #374992 0%, #4675D2 100%) !important;
+    }
+
+    .navbar[data-v-106b99c8] {
+      background: linear-gradient(90deg, #374992 0%, #4675D2 100%) !important;
+    }
+
+    .mian .wallet-box .box .balance[data-v-7b283485] {
+      background: linear-gradient(180deg, #374993 0%, #374993 100%) !important;
+
+    }
+
+    .mian .wallet-box .box .balance[data-v-7b283485] {
+      box-shadow: 0 0rem 0.5rem #ffffff00 !important;
+    }
+
+
+
+    .progressBars[data-v-be467d1a] {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      width: 100%;
+      text-align: center;
+      margin-bottom: .4rem;
+    }
+
+    .progressBars>div[data-v-be467d1a] {
+      width: 50%;
+
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 10px;
+      margin: 10px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    h3 {
+      color: #5eacf7;
+    }
+
+    span {
+      color: white;
+    }
+
+    .gameList[data-v-be467d1a] {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      gap: .26667rem;
+      -webkit-flex-direction: initial;
+      flex-direction: initial;
+      width: 100%;
+      margin-top: 0.33333rem;
+      margin-bottom: .66667rem;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+
+    .gameList>div[data-v-be467d1a] {
+      width: 31%;
+      min-height: 2.13333rem;
+      background-color: #2b3270;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border-radius: .13333rem;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      gap: .13333rem;
+      padding: 0 .2rem;
+      color: #acafc2;
+    }
+
+
+
+    .mian .wallet-user .img[data-v-7b283] {
+      height: 0.8rem;
+      width: 0.8rem;
+      border-radius: 0rem;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .mian .wallet-box[data-v-7b283485] {
+      padding: 0 .53333rem;
+      margin-top: -2.83333rem;
+    }
+  </style>
+</head>
+
+<body style="font-size: 12px;">
+  <div id="app">
+    <div data-v-7b283485="" class="mian">
+      <div data-v-106b99c8="" data-v-7b283485="" class="navbar">
+        <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/home'">
+          <div data-v-a9660e98="" data-v-106b99c8="" class="c-row c-row-middle-center">
+            <i class="fa-light fa-angle-left fa-fade fa-xl center" style="color: #FFF"></i>
+          </div>
+        </div>
+        <div data-v-106b99c8="" class="navbar-title"> Wallet </div>
+        <div data-v-106b99c8="" class="navbar-right" onclick="location.href='/keFuMenu'">
+          <div data-v-7b283485="" data-v-106b99c8="" class="c-row">
+            <i class="fa-fade fa center" style="color: #FFF">
+              <img data-v-7b283485="" data-v-106b99c8="" src="/images/audio.webp" class="audio">
+            </i>
+          </div>
+        </div>
+      </div>
+      <div data-v-7b283485="" class="wallet">
+        <div data-v-7b283485="" class="wallet-user c-tc">
+
+
+          <div data-v-7b283="" class="txt c-row c-row-middle">
+
+          </div>
+          <div data-v-7b283485="" class="c-row balanceMoney c-row-middle-center">
+            <img width="50px" height="50px" src="/assets/png/wallets-dad944e7.png" class="m222 img">
+          </div>
+
+          <div data-v-7b283485="" class="c-row balanceMoney c-row-middle-center">
+            <p style="color: white; margin-top: 12px;">Total Balance</p>
+          </div>
+ 
+            <div data-v-8cd483ca="" class="p-l-15">
+               <div class="header"  style=" margin-bottom: 15px;">
+                <div class="currency" id="inrCurrency"  style="  margin-right: 22px;">
+                  <!-- <span class="currency-name">INR :</span> -->
+                  <span class="currency-value money" id="inrValue">₹<span class="loading-text">Loading...</span></span>
+                 </div>
+              
+                <div class="currency" id="usdtCurrency" style="display:none; margin-right: 22px">
+                  <!-- <span class="currency-name">USDT :</span> -->
+                  <span class="currency-value money1" id="usdtValue">$<span class="loading-text">Loading...</span></span>
+                 </div>
+              
+                <div data-v-5d3a4ff1="" role="checkbox" class="van-checkbox" tabindex="0" aria-checked="true" onclick="toggleCheckbox()">
+                  <div class="van-checkbox__icon van-checkbox__icon--round ">
+                    <i class="van-badge__wrapper van-icon van-icon-success"></i>
+                  </div>
+                  <span class="van-checkbox__label" id="labelText">Convert USDT</span>
+                </div>
+              </div>
+              
+            </div> 
+
+        </div>
+        <div data-v-7b283485="" class="wallet-box">
+          <div data-v-7b283485="" class="box">
+
+            <!--<div data-v-7b283485="" class="title">Wallet</div>-->
+
+
+
+            <div data-v-be467d1a="" class="progressBars">
+              <div data-v-be467d1a="" class="progressBarsL">
+                <div data-v-be467d1a="" class="van-circle">
+                  <svg viewBox="0 0 1100 1100">
+                    <defs>
+                      <linearGradient id="van-circle-0" x1="100%" y1="0%" x2="0%" y2="0%">
+                        <stop offset="0%" stop-color="#3C9CF6">
+                        </stop>
+                        <stop offset="100%" stop-color="#4DD8EF">
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                    <path class="van-circle__layer"
+                      d="M 550 550 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+                      style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 100px;">
+                    </path>
+                    <path d="M 550 550 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+                      class="van-circle__hover" stroke="url(#van-circle-0)"
+                      style="stroke: url(&quot;#van-circle-0&quot;); stroke-width: 101px; stroke-linecap: butt; stroke-dasharray: 0px, 3140px;">
+                    </path>
+                  </svg>
+                  <div class="van-circle__text">
+                    100%
+                  </div>
+                </div>
+                <h3 data-v-be467d1a="" class="money" style="margin-top: 8px;">
+                  ₹0.00
+                </h3>
+                <span data-v-be467d1a="" style="margin-top: 8px;">
+                  Main wallet
+                </span>
+              </div>
+              <div data-v-be467d1a="" class="progressBarsR">
+                <div data-v-be467d1a="" class="van-circle">
+                  <svg viewBox="0 0 1100 1100">
+                    <defs>
+                      <linearGradient id="van-circle-1" x1="100%" y1="0%" x2="0%" y2="0%">
+                        <stop offset="0%" stop-color="#3C9CF6">
+                        </stop>
+                        <stop offset="100%" stop-color="#4DD8EF">
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                    <path class="van-circle__layer"
+                      d="M 550 550 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+                      style="fill: none; stroke: rgb(55, 73, 146); stroke-width: 100px;">
+                    </path>
+                    <path d="M 550 550 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+                      class="van-circle__hover" stroke="url(#van-circle-1)"
+                      style="stroke: url(&quot;#van-circle-1&quot;); stroke-width: 101px; stroke-linecap: butt; stroke-dasharray: 0px, 3140px;">
+                    </path>
+                  </svg>
+                  <div class="van-circle__text">
+                    0%
+                  </div>
+                </div>
+                <h3 data-v-be467d1a="" style="margin-top: 8px;" id="3rdParty">
+                  ₹0.00
+                </h3>
+                <span data-v-be467d1a="" style="margin-top: 8px;">
+                  3rd party wallet
+                </span>
+              </div>
+            </div>
+            <div data-v-7b283485="" class="c-row c-row-between total-btn m-t-30" id="main-wallet">
+              <!-- <div data-v-7b283485="" class="item c-row c-row-center" onclick="location.href='/wallet/withdrawal'">
+                  <div data-v-7b283485="" class="li"> WITHDRAW</div>
+              </div> -->
+              <div data-v-7b283485="" class="item c-row c-row-center" onclick="transferToMainWallet()">
+                <div data-v-7b283485="" id="timer" class="li">Main wallet transfer</div>
+              </div>
+            </div>
+            <div data-v-7b283485="" class="c-row c-row-between total-btn m-t-30" id="image_box">
+              <div class="images_21" onclick="location.href='/wallet/recharge'">
+                <img src="/images/recharge.png">
+                <p>Deposit</p>
+              </div>
+              <div class="images_21" onclick="location.href='/wallet/withdrawal'">
+                <img src="/images/withdraw.png">
+                <p>Withdraw</p>
+              </div>
+              <div class="images_21" onclick="location.href='/wallet/rechargerecord'">
+                <img src="/images/rechargeHistory.png">
+                <p>Deposit History</p>
+              </div>
+              <div class="images_21" onclick="location.href='/wallet/withdrawalrecord'">
+                <img src="/images/withdrawHistory.png">
+                <p>Withdraw History</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div data-v-be467d1a="" class="gameList">
+            <div data-v-be467d1a="" class="box"
+              style="background-image: url(&quot;/assets/png/JILI-e25514b0.png&quot;);">
+              <h3 data-v-be467d1a="" id='jilli'>
+                0.00
+              </h3>
+              <span data-v-be467d1a="">
+                JILI
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include('../nav') -%>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/js/client.js"></script>
+  <script>
+    let isChecked = true;   
+    function toggleCheckbox() {
+      const checkbox = document.querySelector('.van-checkbox');
+      const icon = checkbox.querySelector('.van-checkbox__icon');
+      const inrCurrency = document.getElementById('inrCurrency');
+      const usdtCurrency = document.getElementById('usdtCurrency');
+      const labelText = document.getElementById('labelText');
+  
+      isChecked = !isChecked;
+      checkbox.setAttribute('aria-checked', isChecked.toString());
+  
+      if (!isChecked) {
+        icon.classList.add('van-checkbox__icon--checked');
+        usdtCurrency.style.display = 'block';
+        inrCurrency.style.display = 'none';
+        labelText.textContent = 'Convert INR';
+         
+      } else {
+        icon.classList.remove('van-checkbox__icon--checked');
+        inrCurrency.style.display = 'block';
+        usdtCurrency.style.display = 'none';
+        labelText.textContent = 'Convert USDT'; 
+      }
+    }
+  </script>
+  <script>
+
+    $('#reload .van-image').click(function (e) {
+      e.preventDefault();
+      $(this).addClass('action block-click');
+      setTimeout(() => {
+        $(this).removeClass('action block-click');
+      }, 2500);
+      $.ajax({
+        type: "GET",
+        url: "/api/webapi/GetUserInfo",
+        dataType: "json",
+        success: function (response) {
+          let user = response.data;
+          $('.mainmoney').text("₹" + new Intl.NumberFormat().format(user.money_user) + ".00");
+          $('.wallet-user .name').text(user.name_user);
+          $('.money').text("₹" + new Intl.NumberFormat().format(user.money_user) + ".00"); // :TODO
+        }
+      });
+    });
+    $.ajax({
+      type: "GET",
+      url: "/api/webapi/GetUserInfo",
+      dataType: "json",
+      success: function (response) {
+        let user = response.data;
+        $('.wallet-user .name').text(user.name_user);
+        $('.money').text("₹" + new Intl.NumberFormat().format(user.money_user) + ".00");
+        $('.mainmoney').text("₹" + new Intl.NumberFormat().format(user.money_user) + ".00");
+        $('.money1').text(`$ ${user.money_user_usdt}`);
+        $('.balance .item:eq(0) div:eq(1)').text("₹" + new Intl.NumberFormat().format(response.totalRecharge) + ".00");// :TODO
+        $('.balance .item:eq(1) div:eq(1)').text("₹" + new Intl.NumberFormat().format(response.totalWithdraw) + ".00");// :TODO
+      }
+    });
+
+ 
+
+    $.ajax({
+      type: "GET",
+      url: "/api/webapi/getboardGameInfo",
+      dataType: "json",
+      success: function (response) {
+        let user = response.data;
+        if (user.Data && user.Data.length) {
+          let data = user.Data[0]
+          $('#jilli').text(data.Balance);
+          $('#3rdParty').text("₹" + new Intl.NumberFormat().format(data.Balance));
+        }
+      }
+    });
+    function transferToMainWallet() {
+      var money = $('.money').text();
+      $(".circle").css('color', 'rgb(249, 89, 89)');
+      $(".per").text('100%');
+      $(".walletmoney").text(money);
+      var secondsLeft = 5;
+      $('#timer').addClass('button-gray');
+      $('#timer').text('Recalling ' + secondsLeft);
+
+      var countdown = setInterval(function () {
+        secondsLeft--;
+        $('#timer').text('Recalling ' + secondsLeft);
+        if (secondsLeft <= 0) {
+          clearInterval(countdown);
+          $(".cercle").css('color', '');
+          $(".per").text('0%');
+          $(".walletmoney").text('0.0');
+          $('#timer').removeClass('button-gray');
+          $('#timer').text('Main wallet transfer');
+        }
+      }, 1000);
+      $.ajax({
+        type: "GET",
+        url: "/api/webapi/transferMoneyToMainWallet",
+        dataType: "json",
+        success: function (response) {
+          let user = response.data;
+          if (user.Data) {
+            let data = user.Data
+            $('#jilli').text(data.CoinAfter);
+            $('#3rdParty').text("₹" + new Intl.NumberFormat().format(data.CoinAfter));
+            $.ajax({
+              type: "GET",
+              url: "/api/webapi/GetUserInfo",
+              dataType: "json",
+              success: function (response) {
+                let user = response.data;
+                $('.mainmoney').text("₹" + new Intl.NumberFormat().format(user.money_user) + ".00");
+                $('.wallet-user .name').text(user.name_user);
+                $('.money').text("₹" + new Intl.NumberFormat().format(user.money_user) + ".00"); // :TODO
+                $('.money1').text(`$ ${user.money_user_usdt}`);
+              }
+            });
+          }
+        }
+      });
+    }
+
+  </script>
+</body>
+
+</html>

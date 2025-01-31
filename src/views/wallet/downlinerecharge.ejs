@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.16px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>RK Lottery </title>
+    <link href="/css/wallet1/main.css" rel="stylesheet" />
+    <link href="/css/wallet1/calender.css" rel="stylesheet" />
+    <link href="/css/wallet1/chunk_2-1.css" rel="stylesheet" />
+    <link href="/css/wallet1/chunk_2-2.css" rel="stylesheet" />
+    <link href="/css/wallet1/chunk_2-3.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+    <style>
+        .popup_contaner {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .container-c {
+            background: 2b3270 !important;
+        }
+
+        .popup {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            z-index: 1000;
+            margin-top: 500px;
+        }
+
+        .popup.active {
+            display: block;
+        }
+
+
+
+        /* CSS */
+        .button-90 {
+            color: #fff;
+            /* padding: 10px 10px; */
+            border-radius: 21px;
+            width: 150px;
+            background-color: #4C43CD;
+
+            box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            font-size: 16px;
+
+            border: 0;
+
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+    <style>
+        #popupContainer {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            height: 50vh;
+        }
+
+        #popupContent {
+            position: relative;
+            background-color: white;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            height: 100%;
+            animation: slideIn 0.5s ease-in-out forwards;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .toggleElement.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .toggleElement {
+            opacity: 1;
+            visibility: visible;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .top-s {
+            position: fixed;
+            bottom: 47px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            max-width: 370px;
+            height: 48vh;
+            background: #03bfff;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 12px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            bottom: 0px;
+            padding-top: 11px;
+        }
+    </style>
+    <style>
+        .container-c {
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            box-shadow: .05333rem .53333rem .90667rem -.24rem hsla(0, 0%, 87.1%, .22);
+            background-color: #2b3270;
+            margin-top: 10px;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            color: white;
+        }
+
+        .container-c .txt {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .container-c .left {
+            width: 49%;
+        }
+
+        .container-c .right .txt {
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .divider {
+            border-left: 1px dashed white;
+            /* Vertical line style */
+            height: 161px;
+            /* Adjust height as needed */
+        }
+
+        .searchbar-container[data-v-c06f3394] {
+            /* position: relative; */
+            z-index: 1;
+            width: 95%;
+            margin: auto;
+            margin-top: 13px;
+        }
+
+        button,
+        input,
+        textarea {
+            color: inherit;
+            font: inherit;
+            padding: 10px;
+            border-radius: 7px;
+            background-color: #2B3270;
+            width: 100%;
+            border: none;
+            font-size: 15px;
+        }
+
+        input::placeholder {
+            color: #fff;
+            /* Change this to your desired color */
+
+        }
+
+        .TeamReport__C-head-line2[data-v-10d1559c] {
+            height: 1.06667rem;
+            width: 95%;
+            margin: auto;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            color: var(--text_color_L2);
+            font-size: .37333rem;
+            margin-top: .26667rem;
+            /* background-color: rebeccapurple; */
+        }
+
+
+html,body{
+ background-color:black;
+ }
+#app,
+.mian {
+    width: 10rem;
+    min-height: 100vh;
+    margin: auto;
+        background: #22275B;
+
+}
+.mian {
+  padding-top: 1.30667rem;
+  height: 100%;
+  max-width: 10.66667rem;
+  margin: 0 auto;
+}
+.mian.action {
+  touch-action: none;
+  touch-action: pan-x;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.van-dialog {
+  top: 50% !important;
+  width: 8rem !important;
+  border-radius: 0.26667rem !important;
+}
+.van-dialog__message img {
+  width: 100% !important;
+}
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 2.4rem !important;
+    width: 10rem;
+    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  body,
+  html {
+    position: relative;
+    background-color:black;
+  }
+  body {
+    overflow-y: scroll;
+    width: 100%;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  .mian,
+  .nav,
+  .navbar,
+  .van-tabbar {
+    width: 10rem !important;
+  }
+}
+
+
+.serveBox .img {
+  height: 1.46667rem;
+  border-radius: 1.46667rem;
+  background-color: #fff;
+  box-shadow: 0 0.02667rem 0.48rem 0 rgba(203, 202, 220, 0.56);
+}
+.activityBox .img {
+  width: 1.46667rem;
+}
+.activityBox .img,
+.serveBox .img {
+  -webkit-animation: stepHome 3s infinite alternate;
+  animation: stepHome 3s infinite alternate;
+}
+.toggle_menu_container {
+  height: 1.46667rem;
+  width: 1.46667rem;
+  border-radius: 1.46667rem;
+  background-color: #fff;
+  box-shadow: 0 0.02667rem 0.48rem 0 rgba(203, 202, 220, 0.56);
+  position: relative;
+}
+.navbar[data-v-106b99c8] {
+  width: 100%;
+  max-width: 10.66667rem;
+  top: 0;
+  height: 1.33333rem;
+  line-height: 1.33333rem;
+ 
+  background:#2B3270;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  color: #fff;
+  z-index: 999;
+}
+.navbar.action[data-v-106b99c8] {
+  background: url(../img/header.496d8f96.png);
+  background-size: cover;
+}
+.navbar-title[data-v-106b99c8] {
+  font-size: 0.42667rem;
+  flex: 1;
+  text-align: center;
+}
+.navbar .bank[data-v-106b99c8] {
+  width: 0.69333rem;
+  height: 0.69333rem;
+  border-radius: 0.69333rem;
+}
+.navbar-left[data-v-106b99c8],
+.navbar-right[data-v-106b99c8] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  line-height: 1.33333rem;
+  padding: 0 0.26667rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-left[data-v-106b99c8] {
+  left: 0;
+}
+.navbar-right[data-v-106b99c8] {
+  right: 0;
+}
+.navbar-icon[data-v-106b99c8] {
+  height: 1.2rem;
+}
+.navbar-back[data-v-106b99c8] {
+  width: 0.69333rem;
+  height: 0.69333rem;
+}
+.van-list__error-text, .van-list__finished-text, .van-list__loading {
+    color: #969799;
+    font-size: 0.37333rem;
+    line-height: 1.33333rem;
+    text-align: center;
+}
+        .TeamReport__C-head-line2>div[data-v-10d1559c] {
+            border-radius: .13333rem;
+            line-height: 1.06667rem;
+            width: calc(100% - .13333rem);
+            padding: 0 .26667rem;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            background-color: #2B3270;
+            color: white;
+        }
+
+        .TeamReport__C-head-line2>div+div[data-v-10d1559c] {
+            margin-left: .26667rem;
+        }
+
+
+
+        .van-icon {
+            position: relative;
+            display: inline-block;
+            font: .18667rem / 1 vant-icon;
+            font: normal normal normal .18667rem / 1 var(--van-icon-font-family, "vant-icon");
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+
+        /* level dropdown */
+
+        .TeamReport__C-head-line2[data-v-10d1559c] {
+            height: 1.06667rem;
+            width: 95%;
+            margin: auto;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            color: var(--text_color_L2);
+            font-size: .37333rem;
+            margin-top: .26667rem;
+            /* background-color: rebeccapurple; */
+        }
+
+        .TeamReport__C-head-line2>div[data-v-10d1559c] {
+            border-radius: .13333rem;
+            line-height: 1.06667rem;
+            width: calc(100% - .13333rem);
+            padding: 0 .26667rem;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            background-color: #2B3270;
+            color: white;
+        }
+
+        .TeamReport__C-head-line2>div+div[data-v-10d1559c] {
+            margin-left: .26667rem;
+        }
+
+        .van-icon {
+            position: relative;
+            display: inline-block;
+            font: .18667rem / 1 vant-icon;
+            font: normal normal normal .18667rem / 1 var(--van-icon-font-family, "vant-icon");
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Dropdown styles */
+        .dropdown1 {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dropdown-content1 {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 40px;
+        }
+
+        .dropdown-content1 li {
+            color: black;
+            padding: 7px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content1 li:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown1:hover .dropdown-content1 {
+            display: block;
+        }
+
+        /* Adjusting for your specific styles */
+        .dropdown1[data-v-10d1559c] {
+            background-color: #2B3270;
+            color: white;
+            border-radius: .13333rem;
+            padding: 0 .26667rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: calc(100% - .13333rem);
+        }
+
+        .dropdown-content1[data-v-10d1559c] {
+            background-color: #2B3270;
+            color: white;
+            width: 100%;
+        }
+
+        .dropdown-content1 li[data-v-10d1559c] {
+            color: white;
+        }
+
+        .dropdown-content1 li[data-v-10d1559c]:hover {
+            background-color: #444b8b;
+        }
+
+
+        /* date css */
+
+        .TeamReport__C-head-line2[data-v-10d1559c] {
+            height: 1.06667rem;
+            width: 95%;
+            margin: auto;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            color: var(--text_color_L2);
+            font-size: .37333rem;
+            margin-top: .26667rem;
+            /* background-color: rebeccapurple; */
+        }
+
+        .TeamReport__C-head-line2>div[data-v-10d1559c] {
+            border-radius: .13333rem;
+            line-height: 1.06667rem;
+            width: calc(100% - .13333rem);
+            padding: 0 .26667rem;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            background-color: #2B3270;
+            color: white;
+        }
+
+        .TeamReport__C-head-line2>div+div[data-v-10d1559c] {
+            margin-left: .26667rem;
+        }
+
+        .van-icon {
+            position: relative;
+            display: inline-block;
+            font: .18667rem / 1 vant-icon;
+            font: normal normal normal .18667rem / 1 var(--van-icon-font-family, "vant-icon");
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2B3270;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            color: white;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            top: 48px;
+            right: 2px;
+        }
+
+        .dropdown-content li {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+        }
+
+        .dropdown-content li:hover {
+            background-color: #444b8b;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Adjusting for your specific styles */
+        .dropdown[data-v-10d1559c] {
+            background-color: #2B3270;
+            color: white;
+            border-radius: .13333rem;
+            padding: 0 .26667rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: calc(100% - .13333rem);
+        }
+
+        .dropdown-content[data-v-10d1559c] {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body style="font-size: 12px;">
+
+    <div id="app">
+        <div data-v-3966082f="" class="mian">
+            <div data-v-106b99c8="" data-v-3966082f="" class="navbar">
+                <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/promotion'">
+                    <div data-v-106b99c8="" class="bank c-row c-row-middle-center">
+                        <img data-v-106b99c8="" src="/images/back.c3244ab0.png" class="navbar-back">
+                    </div>
+                </div>
+                <div data-v-106b99c8="" class="navbar-title">Subordinate Data</div>
+                <!-- <button id="openPopup" class="button-90" role="button">Select Date</button> -->
+
+            </div>
+
+
+            <div id="toggleElement" class="toggleElement hidden">
+                <div class="top-s"><button class="cancel-btn" onclick="toggleVisibility()">Cancel</button>
+                    <h3 style="color: white;">Choose a date</h3> <button class="confirm-btn">Confirm</button>
+                </div>
+                <div class="date-selector ">
+
+                    <div class="year" id="year1"></div>
+                    <div class="month" id="month1"></div>
+                    <div class="day" id="day1"></div>
+                </div>
+
+            </div>
+
+            <div>
+
+              <!--  <div data-v-c06f3394="" data-v-10d1559c="" class="searchbar-container">
+                    <input data-v-c06f3394="" type="text" auto-complete="new-password" autocomplete="off"
+                        class="searchbar-container__searchbar" placeholder="Search subordinate UID" maxlength="30">
+                </div>  -->
+
+                <div data-v-10d1559c="" class="TeamReport__C-head-line2">
+                    <!-- <div data-v-10d1559c="">
+                        <span data-v-10d1559c="" class="default">All</span>
+                        <i data-v-10d1559c=""
+                            class="van-badge__wrapper van-icon van-icon-arrow-down"></i>
+                    </div> -->
+
+                    <div data-v-10d1559c="" class="dropdown1">
+                        <span> <span data-v-10d1559c="" class="">Level : </span> <span data-v-10d1559c=""
+                                class="default">All</span></span>
+                        <i data-v-10d1559c="" class="van-badge__wrapper van-icon van-icon-arrow-down"></i>
+                        <ul class="dropdown-content1" data-v-10d1559c="">
+                            <li data-v-10d1559c="" value="1">Level 1</li>
+                            <li data-v-10d1559c="" value="2">Level 2</li>
+                            <li data-v-10d1559c="" value="3">Level 3</li>
+                            <li data-v-10d1559c="" value="4">Level 4</li>
+                            <li data-v-10d1559c="" value="5">Level 5</li>
+                            <li data-v-10d1559c="" value="6">Level 6</li>
+                        </ul>
+                    </div>
+                    <!-- <div data-v-10d1559c="">
+                        <span data-v-10d1559c="" class="default">2024-06-21</span>
+                        <i data-v-10d1559c="" class="van-badge__wrapper van-icon van-icon-arrow-down"></i>
+                    </div> -->
+                    <div data-v-10d1559c="" class="dropdown">
+                        <span data-v-10d1559c="" class="default">Select Date</span>
+                        <i data-v-10d1559c="" class="van-badge__wrapper van-icon van-icon-arrow-down"></i>
+                        <ul class="dropdown-content year-dropdown" data-v-10d1559c="">
+                            <!-- Years will be populated by JavaScript -->
+                        </ul>
+                        <ul class="dropdown-content month-dropdown" data-v-10d1559c="">
+                            <!-- Months will be populated by JavaScript -->
+                        </ul>
+                        <ul class="dropdown-content day-dropdown" data-v-10d1559c="">
+                            <!-- Days will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div data-v-7c8bbbf4="" class="info-data c-row c-row-between m-b-20">
+
+                <div data-v-7c8bbbf4="" class="right" style="width: 100%; text-align: center;">
+
+
+                    <div style="margin-top: 10px;" class="container-c">
+                        <div class="left">
+                            <p data-v-7c8bbbf4="" class="txt">
+                            <p id="total_recharge_count">1</p> <span data-v-7c8bbbf4="" class="num">Deposit
+                                number</span></p>
+                            <p data-v-7c8bbbf4="" class="txt">
+                            <p id="better_number">1</p> <span data-v-7c8bbbf4="" class="num" id="f_total">Number
+                                of bettors</span></p>
+                            <p data-v-7c8bbbf4="" class="txt">
+                            <p id="total_first_recharge_count">1</p> <span data-v-7c8bbbf4="" class="num"
+                                id="f_total">Number
+                                of people making first deposit</span></p>
+
+                        </div>
+                        <div class="divider"></div>
+                        <div class="left right">
+
+                            <p data-v-7c8bbbf4="" class="txt">
+                            <p id="total_recharge_amount">1</p> <span data-v-7c8bbbf4="" class="num">Deposit
+                                amount</span></p>
+                            <p data-v-7c8bbbf4="" class="txt" roses_f>
+                            <p id="total_bet_amount">1</p><span data-v-7c8bbbf4="" class="num" id="roses_all">Total
+                                bet</span></p>
+                            <p data-v-7c8bbbf4="" class="txt" roses_f>
+                            <p id="total_bet_count">1</p><span data-v-7c8bbbf4="" class="num" id="roses_all">Deposit
+                                amount</span></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div data-v-3966082f="" class="box">
+                <div data-v-3966082f="" class="list m-b-20">
+                    <div data-v-3966082f="" role="feed" class="van-list">
+                        <div class="lisys">
+
+                        </div>
+                        <div class="van-list__finished-text">Not available anymore</div>
+                        <div class="van-list__placeholder"></div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-7692a079="" data-v-3966082f="" class="Loading c-row c-row-middle-center" style="display: none;">
+                <div data-v-7692a079="" class="van-loading van-loading--circular">
+                    <span data-v-7692a079="" class="van-loading__spinner van-loading__spinner--circular"
+                        style="color: rgb(242, 65, 59);">
+                        <svg data-v-7692a079="" viewBox="25 25 50 50" class="van-loading__circular">
+                            <circle data-v-7692a079="" cx="50" cy="50" r="20" fill="none"></circle>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/client.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+
+
+        // Initialize Flatpickr
+        // $.ajax({
+        //     type: "GET",
+        //     url: "/api/webapi/downlinerecharge/list",
+        //     dataType: "json",
+        //     success: function (response) {
+        //         // console.log(response.datas);
+        //         console.log("object", response)
+        //         // if (response.datas.length == 0) return;
+        //         loads(response.datas);
+        //         console.log("dateeeee", response.datas[0].level)
+        //         $('#total_recharge_count').text(response.total_recharge_count);
+        //         $('#better_number').text(response.better_number);
+        //         $('#total_first_recharge_count').text(response.total_first_recharge_count);
+        //         $('#total_recharge_amount').text(response.total_recharge_amount);
+        //         $('#total_bet_amount').text(response.total_bet_amount);
+        //         $('#total_bet_count').text(response.total_bet_count);
+        //     }
+        // });
+
+        function formatTimestampToDate(timestamp) {
+            const date = new Date(timestamp);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+
+        function loads(datas, filterDate) {
+            let filteredData = datas.filter(data => {
+                const dataDate = formatTimestampToDate(Number(data.time));
+                // let dataDate = new Date(Number(data.time));
+                // console.log("dddddddd111", dataDate)
+                return filterDate ? dataDate : true;
+            });
+
+            let html = filteredData.map((data) => {
+                return `   <div class="deposite-history-section">
+                <div class="list m-b-20">
+                    <div class="deposit-h-top">
+                        <div class="">
+                       <span
+                            style="display: flex; align-items: center; color: whitesmoke;" data-clipboard-text="${data.userid}"> ${data.userid} <img
+                            src="/images/copy.png" class="van-image__img" onclick="copyId('${String(data.userid)}')"
+                            style="width: 17px; height: 15px; margin-left: 5px;" /></span>
+                        </div>
+                  
+                    </div>
+                    <div class="deposit-content">
+                        <ul>
+                            <li><span>Level</span> <span class="price">${data.level} </span></li>
+                            <li><span>Deposit amount</span> <span class="color-blue">${data.grandRechargeTotalMoney}</span></li>
+                            <li><span>Bet amount</span> <span class="color-blue">${data.totalBet}</span></li>
+                          
+                            <li><span>Time</span> <span class="upi">${timerJoin(new Date(Number(data.time)))}</span></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>`;
+            }).join(''); // Added join('') to convert array to string
+
+
+            $('.van-list .lisys').html(html);
+            $('.tag-read').click(function (e) {
+                e.preventDefault();
+                let text = $(this).text().trim();
+                navigator.clipboard.writeText(text);
+                $(this).addClass('block-click');
+                alertMess('Copy successful', $(this));
+            });
+        }
+
+
+
+        function copyId(data) {
+            const idString = String(data);
+            navigator.clipboard.writeText(idString)
+
+            alertMess("Copy Successfully")
+        }
+
+    </script>
+    <script>
+        function formateT(params) {
+            let result = (params < 10) ? "0" + params : params;
+            return result;
+        }
+
+        function timerJoin(params = '') {
+            let date = '';
+            if (params) {
+                date = new Date(Number(params));
+            } else {
+                date = new Date();
+            }
+            let years = formateT(date.getFullYear());
+            let months = formateT(date.getMonth() + 1);
+            let days = formateT(date.getDate());
+
+            let hours = formateT(date.getHours());
+            let minutes = formateT(date.getMinutes());
+            let seconds = formateT(date.getSeconds());
+            return years + '-' + months + '-' + days + ' ' + hours + '-' + minutes + '-' + seconds;
+        }
+
+        function alertMess(text, sic) {
+            $('body').append(
+                `
+                    <div data-v-1dcba851="" class="msg">
+                        <div data-v-1dcba851="" class="msg-content v-enter-active v-enter-to" sstyle=""> ${text} </div>
+                     </div>
+                     `
+            );
+            setTimeout(() => {
+                $('.msg .msg-content').removeClass('v-enter-active v-enter-to');
+                $('.msg .msg-content').addClass('v-leave-active v-leave-to');
+                setTimeout(() => {
+                    $('.msg').remove();
+                }, 100);
+                sic.removeClass('block-click');
+            }, 1000);
+        }
+        $.ajax({
+            type: "GET",
+            url: "/api/webapi/downlinerecharge/list",
+            dataType: "json",
+            success: function (response) {
+                console.log(response.datas);
+                // if (as.length == 0) return;
+                loads(response.datas);
+                $('#total_recharge_count').text(response.total_recharge_count);
+                $('#better_number').text(response.better_number);
+                $('#total_first_recharge_count').text(response.total_first_recharge_count);
+                $('#total_recharge_amount').text(response.total_recharge_amount);
+                $('#total_bet_amount').text(response.total_bet_amount);
+                $('#total_bet_count').text(response.total_bet_count);
+            }
+        });
+
+
+        function toggleVisibility() {
+            var element = document.getElementById("toggleElement");
+            if (element.classList.contains("hidden")) {
+                element.classList.remove("hidden");
+            } else {
+                element.classList.add("hidden");
+            }
+        }
+    </script>
+
+
+    <!-- level javascript -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // date section start
+            const dropdown = document.querySelector('.dropdown');
+            const defaultSpan = dropdown.querySelector('.default');
+            const yearDropdown = dropdown.querySelector('.year-dropdown');
+            const monthDropdown = dropdown.querySelector('.month-dropdown');
+            const dayDropdown = dropdown.querySelector('.day-dropdown');
+            const currentYear = new Date().getFullYear();
+
+            // Populate years
+            for (let i = 0; i < 3; i++) {
+                let yearItem = document.createElement('li');
+                yearItem.textContent = currentYear - i;
+                yearItem.addEventListener('click', () => {
+                    defaultSpan.textContent = yearItem.textContent;
+                    populateMonths();
+                    yearDropdown.style.display = 'none';
+                    monthDropdown.style.display = 'block';
+                });
+                yearDropdown.appendChild(yearItem);
+            }
+
+            // Function to populate months
+            function populateMonths() {
+                monthDropdown.innerHTML = ''; // Clear previous months
+                const months = [
+                    'January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'
+                ];
+                months.forEach((month, index) => {
+                    let monthItem = document.createElement('li');
+                    monthItem.textContent = month;
+                    monthItem.addEventListener('click', () => {
+                        const selectedYear = defaultSpan.textContent;
+                        defaultSpan.textContent = `${selectedYear}-${String(index + 1).padStart(2, '0')}`;
+                        populateDays(selectedYear, index + 1);
+                        monthDropdown.style.display = 'none';
+                        dayDropdown.style.display = 'block';
+                    });
+                    monthDropdown.appendChild(monthItem);
+                });
+            }
+
+            // Function to populate days
+            function populateDays(year, month) {
+                dayDropdown.innerHTML = ''; // Clear previous days
+                const daysInMonth = new Date(year, month, 0).getDate();
+                for (let i = 1; i <= daysInMonth; i++) {
+                    let dayItem = document.createElement('li');
+                    dayItem.textContent = i;
+                    dayItem.addEventListener('click', () => {
+                        const selectedYearMonth = defaultSpan.textContent.split('-').slice(0, 2).join('-');
+                        defaultSpan.textContent = `${selectedYearMonth}-${String(i).padStart(2, '0')}`;
+                        console.log("Selected Date:", defaultSpan.textContent);
+
+                        // Call your function to load data with the selected date
+                        const filterDate = new Date(defaultSpan.textContent);
+                        loadDataBydate(defaultSpan.textContent)
+
+                        dayDropdown.style.display = 'none';
+                    });
+                    dayDropdown.appendChild(dayItem);
+                }
+            }
+
+
+
+
+            // start level system
+            // Handle dropdown visibility
+            dropdown.addEventListener('click', (e) => {
+                const targetDropdown = e.target.closest('.dropdown-content');
+                if (!targetDropdown) {
+                    yearDropdown.style.display = 'block';
+                    monthDropdown.style.display = 'none';
+                    dayDropdown.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target)) {
+                    yearDropdown.style.display = 'none';
+                    monthDropdown.style.display = 'none';
+                    dayDropdown.style.display = 'none';
+                }
+            });
+            // date section end
+
+
+
+            const dropdown1 = document.querySelector('.dropdown1');
+            const defaultSpan1 = dropdown1.querySelector('.default');
+            const dropdownContent = dropdown1.querySelector('.dropdown-content1');
+            const dropdownItems = dropdownContent.querySelectorAll('li');
+            let level = '';
+
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    defaultSpan1.textContent = item.value; // Assuming item.value was meant to be item.textContent
+                    level = defaultSpan1.textContent; // Trim to remove any extra spaces
+
+                    // Call your function to load data with the selected level
+                    loadDataByLevel(level);
+
+                    console.log("Selected Level:", level);
+                });
+            });
+
+            dropdown1.addEventListener('click', () => {
+                // Dropdown visibility handling if needed
+            });
+
+            document.addEventListener('click', (e) => {
+                // Dropdown visibility handling if needed
+            });
+
+            // Function to load data based on selected level
+            function loadDataByLevel(level) {
+                $.ajax({
+                    type: "GET",
+                    url: "/api/webapi/downlinerecharge/list",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log("dfghji", level)
+                        // loads(response.datas, level); // Assuming loads function takes datas and level as parameters
+                        var filteredData = response.datas.filter(function (data) {
+                            console.log("dd", data.level)
+                            return data.level == level;
+                        });
+
+                        loads(filteredData, level);
+                        console.log("object", filteredData)
+
+                        $('#total_recharge_count').text(response.total_recharge_count);
+                        $('#better_number').text(response.better_number);
+                        $('#total_first_recharge_count').text(response.total_first_recharge_count);
+                        $('#total_recharge_amount').text(response.total_recharge_amount);
+                        $('#total_bet_amount').text(response.total_bet_amount);
+                        $('#total_bet_count').text(response.total_bet_count);
+                    },
+                    error: function (error) {
+                        console.error('Error loading data:', error);
+                        // Handle error if needed
+                    }
+                });
+            }
+
+            function formatTimestampToDate(timestamp) {
+                const date = new Date(timestamp);
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+                const day = String(date.getDate()).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            }
+
+
+
+
+            function loadDataBydate(date) {
+                $.ajax({
+                    type: "GET",
+                    url: "/api/webapi/downlinerecharge/list",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log("dfghji", date)
+                        // loads(response.datas, level); // Assuming loads function takes datas and level as parameters
+                        var filteredData = response.datas.filter(function (data) {
+                            const datess = formatTimestampToDate(Number(data.time))
+                            console.log("dd", datess)
+                            return datess == date;
+                        });
+
+                        loads(filteredData, date);
+                        console.log("object", filteredData)
+
+                        $('#total_recharge_count').text(response.total_recharge_count);
+                        $('#better_number').text(response.better_number);
+                        $('#total_first_recharge_count').text(response.total_first_recharge_count);
+                        $('#total_recharge_amount').text(response.total_recharge_amount);
+                        $('#total_bet_amount').text(response.total_bet_amount);
+                        $('#total_bet_count').text(response.total_bet_count);
+                    },
+                    error: function (error) {
+                        console.error('Error loading data:', error);
+                        // Handle error if needed
+                    }
+                });
+            }
+
+
+        });
+    </script>
+
+
+
+
+    <!-- date javascript -->
+
+    <!-- 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdown = document.querySelector('.dropdown');
+            const defaultSpan = dropdown.querySelector('.default');
+            const yearDropdown = dropdown.querySelector('.year-dropdown');
+            const monthDropdown = dropdown.querySelector('.month-dropdown');
+            const dayDropdown = dropdown.querySelector('.day-dropdown');
+            const currentYear = new Date().getFullYear();
+
+            // Populate years
+            for (let i = 0; i < 3; i++) {
+                let yearItem = document.createElement('li');
+                yearItem.textContent = currentYear - i;
+                yearItem.addEventListener('click', () => {
+                    defaultSpan.textContent = yearItem.textContent;
+                    populateMonths();
+                    yearDropdown.style.display = 'none';
+                    monthDropdown.style.display = 'block';
+                });
+                yearDropdown.appendChild(yearItem);
+            }
+
+            // Function to populate months
+            function populateMonths() {
+                monthDropdown.innerHTML = ''; // Clear previous months
+                const months = [
+                    'January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'
+                ];
+                months.forEach((month, index) => {
+                    let monthItem = document.createElement('li');
+                    monthItem.textContent = month;
+                    monthItem.addEventListener('click', () => {
+                        const selectedYear = defaultSpan.textContent.split('-')[0];
+                        defaultSpan.textContent = `${selectedYear}-${String(index + 1).padStart(2, '0')}`;
+                        populateDays(selectedYear, index + 1);
+                        monthDropdown.style.display = 'none';
+                        dayDropdown.style.display = 'block';
+                    });
+                    monthDropdown.appendChild(monthItem);
+                });
+            }
+
+            // Function to populate days
+            function populateDays(year, month) {
+                dayDropdown.innerHTML = ''; // Clear previous days
+                const daysInMonth = new Date(year, month, 0).getDate();
+                for (let i = 1; i <= daysInMonth; i++) {
+                    let dayItem = document.createElement('li');
+                    dayItem.textContent = i;
+                    dayItem.addEventListener('click', () => {
+                        const selectedYearMonth = defaultSpan.textContent.split('-').slice(0, 2).join('-');
+                        defaultSpan.textContent = `${selectedYearMonth}-${String(i).padStart(2, '0')}`;
+                        console.log("ddddddddddd", defaultSpan.textContent)
+                        dayDropdown.style.display = 'none';
+                    });
+                    dayDropdown.appendChild(dayItem);
+                }
+            }
+
+            // Handle dropdown visibility
+            dropdown.addEventListener('click', (e) => {
+                const targetDropdown = e.target.closest('.dropdown-content');
+                if (!targetDropdown) {
+                    yearDropdown.style.display = 'block';
+                    monthDropdown.style.display = 'none';
+                    dayDropdown.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target)) {
+                    yearDropdown.style.display = 'none';
+                    monthDropdown.style.display = 'none';
+                    dayDropdown.style.display = 'none';
+                }
+            });
+        });
+
+    </script> -->
+
+    <script>
+
+
+
+        // Function to load data based on selected date
+
+    </script>
+
+
+
+    <!-- partial -->
+
+</body>
+
+</html>

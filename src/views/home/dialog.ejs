@@ -1,0 +1,18 @@
+<div class="van-overlay" id="gameconfirmoverlay" style="z-index: 2001; display: none;"></div>
+<div role="dialog" tabindex="0" id="gameconfirm" class="van-popup van-popup--center van-dialog gameDialog"
+    style="z-index: 2001; display: none;" aria-labelledby="Tips" style="z-index: 2005;">
+    <div class="van-dialog__header" style=" border-bottom: 1px solid #ccc;">Tips</div>
+    <div class="van-dialog__content" style="padding: 20px;">
+        <div class="van-dialog__message van-dialog__message--has-title">Are you sure you want to join the game?</div>
+    </div>
+    <div class="van-hairline--top van-dialog__footer" style="padding: 10px;">
+        <button type="button" class="van-button van-button--default van-button--large van-dialog__cancel"
+            style="margin-right: 10px;" onclick="closeDialog()">
+            <div class="van-button__content"><span class="van-button__text1">Cancel</span></div>
+        </button>
+        <button type="button"
+            class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left" onclick="redirectJilliFunction()">
+            <div class="van-button__content"><span class="van-button__text1">Confirm</span></div>
+        </button>
+    </div>
+</div>

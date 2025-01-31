@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual Bank Deposit</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
+        integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+</head>
+
+<body>
+    <style>
+        html {
+            height: 100%;
+        }
+        .msg[data-v-1dcba851] {
+          max-width: 29.8rem;
+          width: 80%;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 100000
+      }
+  
+      .msg .msg-content[data-v-1dcba851] {
+          position: relative;
+          padding: .32rem .66667rem;
+          text-align: center;
+          line-height: .64rem;
+          word-break: break-all;
+          overflow: hidden;
+           color: #fff;
+          background-color: rgba(0, 0, 0, .8)
+      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            height: 100%;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            background: cadetblue;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #ff3e3e;
+            padding: 6px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            margin: 15px 10px;
+        }
+
+        footer {
+            background-color: #f2f2f2;
+            padding: 6px;
+            text-align: center;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            margin: 0px 10px;
+            margin-top: auto;
+        }
+
+        .tutorial_root {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f2f2f2;
+            padding: 0px 25px 20px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            margin: 15px 10px;
+        }
+
+        .tutorial_content p {
+            display: flex;
+            gap: 6px;
+        }
+
+        .tutorial_content p strong {
+            white-space: nowrap;
+        }
+
+        @media (min-width: 500px) {
+            .tutorial_root {
+                padding: 0px 20px 20px;
+            }
+        }
+
+        .upi_display_root {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f2f2f2;
+            padding: 0px 25px 20px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            margin: -5px 10px;
+        }
+
+        .upi_display_root h2 {
+            margin: 20px 0px 5px;
+            font-weight: 600;
+        }
+
+        .upi_display_content {
+            margin-top: 10px;
+            padding: 0px 13px;
+            border-radius: 9px;
+            border: 1px solid #020202;
+            font-size: 14px;
+            background: #fdeded;
+            cursor: pointer;
+        }
+
+        .upi_display_content p {
+            display: flex;
+            gap: 6px;
+        }
+
+        .upi_display_content p strong {
+            white-space: nowrap;
+        }
+
+        .upi_display_content__img {
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .verification_form__root {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            /* align-items: center; */
+            background: #f2f2f2;
+            padding: 10px 25px 25px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            margin: 15px 10px;
+        }
+
+        .verification_form__root label {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .verification_form__root input {
+            margin-top: 10px;
+            padding: 10px 13px;
+            border-radius: 9px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .verification_form__root input::placeholder {
+            font-size: 14px;
+        }
+
+        .verification_form__root button {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 9px;
+            border: 1px solid #ccc;
+            background-color: #1c4ff7;
+            background: linear-gradient(90deg,
+                    rgba(172, 10, 154, 1) 0%,
+                    rgba(0, 39, 255, 1) 100%);
+
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .upi_pay_now {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border-radius: 9px;
+            border: 1px solid #ccc;
+            background-color: #1c4ff7;
+            background: linear-gradient(40deg,
+                    rgba(172, 10, 154, 1) 0%,
+                    rgba(0, 39, 255, 1) 100%);
+            font-weight: 500;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+
+    <main>
+        <header>
+            <h2>Manual Bank Deposit</h2>
+        </header>
+
+        <but class="upi_display_root">
+            <h2 class="upi_display_title">
+                Send ₹ <span id="display_amount">
+                    <%=Amount%>
+                </span> on
+            </h2>
+            <div class="bank_details_root">
+                <h2 class="bank_details_title">Bank Details</h2>
+                <div class="bank_details_content">
+                    <p>
+                        <strong>Bank Name:</strong>
+                        <span id="bank_name">
+                            <%=bank_name%>
+                        </span>
+                    </p>
+                    <p>
+                        <strong>IFSC Code:</strong>
+                        <span id="ifsc_code">
+                            <%=ifsc%>
+                        </span>
+                        <button class="copy_icon" onclick="copyText('ifsc_code')">
+                            <img data-v-a9660e98="" width="18px" height="15px" src="/images/copy.png" class="m-l-5">
+                        </button>
+                    </p>
+                    <p>
+                        <strong>Account Number:</strong>
+                        <span id="account_number">
+                            <%=name_user%>
+                        </span>
+                        <button class="copy_icon" onclick="copyText('account_number')">
+                            <img data-v-a9660e98="" width="18px" height="15px" src="/images/copy.png" class="m-l-5">
+                        </button>
+                    </p>
+                    <p>
+                        <strong>Account Name:</strong>
+                        <span id="account_name">
+                            <%=username%>
+                        </span>
+                        <button class="copy_icon" onclick="copyText('account_name')">
+                            <img data-v-a9660e98="" width="18px" height="15px" src="/images/copy.png" class="m-l-5">
+                        </button>
+                    </p>
+                </div>
+            </div>
+
+
+            <div data-v-7c8bbbf4="" id="qrcode" title="">
+                <canvas id="canvas" width="145" height="145" style="display: none;"></canvas>
+            </div>
+           
+        </but>
+
+        <form class="verification_form__root" action="submit.php" method="post">
+            <label for="upi_ref_no">Ref. No.</label>
+            <input type="text" id="upi_ref_no" name="upi_ref_no" required placeholder="Enter Your UTR here..." />
+            <button id="submit_button" type="submit">Submit</button>
+        </form>
+
+        <div class="tutorial_root">
+            <h3 class="tutorial_title">Step by Step Process</h3>
+            <div class="tutorial_content">
+                <p>
+                    <strong>Step 1: </strong>
+                    <span>
+                        Open your UPI app and click on the "Send on upi id" option.
+                    </span>
+                </p>
+                <p>
+                    <strong>Step 2:</strong>
+                    <span>
+                        Enter our UPI ID as a receiver and the amount you want to send.
+                    </span>
+                </p>
+                <p>
+                    <strong>Step 3:</strong>
+                    <span>
+                        Click on the "Send" button to complete the transaction.
+                    </span>
+                </p>
+                <p>
+                    <strong>Step 4:</strong>
+                    <span>
+                        Copy the UPI Ref. No. and paste it in our UPI Ref. No field
+                    </span>
+                </p>
+                <p>
+                    <strong>Step 5:</strong>
+                    <span> Click on the "Submit" button to complete the process. </span>
+                </p>
+            </div>
+        </div>
+
+        <footer>
+            <p></p>
+        </footer>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/qr.js"></script>
+    <script src="/js/client.js"></script>
+    <script>
+         
+ 
+        const alertMessage = (text) => {
+            const msg = document.createElement('div');
+            msg.setAttribute('data-v-1dcba851', '');
+            msg.className = 'msg';
+
+            const msgContent = document.createElement('div');
+            msgContent.setAttribute('data-v-1dcba851', '');
+            msgContent.className = 'msg-content v-enter-active v-enter-to';
+            msgContent.style = '';
+            msgContent.textContent = text;
+
+            msg.appendChild(msgContent);
+            document.body.appendChild(msg);
+
+            setTimeout(() => {
+                msgContent.classList.remove('v-enter-active', 'v-enter-to');
+                msgContent.classList.add('v-leave-active', 'v-leave-to');
+
+                setTimeout(() => {
+                    document.body.removeChild(msg);
+                }, 100);
+            }, 1000);
+        }
+
+
+        function copyText(elementId) {
+        const textToCopy = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => {
+                alertMessage(`${elementId} copied successfully!`);
+            })
+            .catch(err => {
+                console.error('Failed to copy', err);
+                alertMessage('Failed to copy. Please try again.');
+            });
+    }
+        const submitButton = document.getElementById("submit_button");
+        submitButton.addEventListener("click", async (event) => {
+            try {
+                event.preventDefault();
+                const upiRefNo = document.getElementById("upi_ref_no").value;
+                const amount = '<%=Amount%>';
+
+                const response = await axios.post("/wallet/paynow/manual_bank_request", {
+                    money: amount,
+                    utr: upiRefNo,
+                })
+
+                if (!response?.data) {
+                    alertMessage("Something went Wrong!")
+                    return
+                }
+
+                if (response?.data?.status === false) {
+                    alertMessage(response?.data?.message)
+                    return
+                }
+
+                alertMessage(response?.data?.message)
+
+                window.location.href = "/wallet/rechargerecord"
+            } catch (error) {
+                console.log(error);
+                alertMessage("Something went Wrong!")
+            }
+        });
+    </script>
+</body>
+
+</html>

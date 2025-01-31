@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connecting Active Elements</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+    }
+
+    .trend-record {
+      width: 100%;
+      position: relative;
+    }
+
+    .sec {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .sec span {
+      margin-right: 5px;
+    }
+
+
+    .svg-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .line {
+      stroke: red;
+      stroke-width: 2;
+    }
+
+
+    .trend-record {}
+
+    .trend-record ul li {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 10px;
+      border-bottom: 1px solid gainsboro;
+    }
+
+    .trend-record ul li .first {
+      font-size: 13px;
+      color: white;
+    }
+
+    .trend-record ul li .sec {
+      display: flex;
+    }
+
+    .trend-record ul li .sec span {
+      width: .4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: .4rem;
+      line-height: .4rem;
+      text-align: center;
+      border: .01333rem solid #bbbbbb;
+      color: #bbb;
+      margin-right: .10667rem;
+      border-radius: 50%;
+      font-size: 12px;
+    }
+
+ 
+
+    .trend-record ul li .sec .active.five {
+      background-image: linear-gradient(135deg, green 0%, green 50.39%, purple 50.4%, purple 100%);
+      border-color: green;
+      z-index: 1;
+    }
+
+    .trend-record ul li .sec .active.zero {
+      background-image: linear-gradient(135deg, red 0%, red 50.39%, purple 50.4%, purple 100%);
+      border-color: red;
+      z-index: 1;
+    }
+
+    .trend-record ul li .sec .active.two,
+    .trend-record ul li .sec .active.four,
+    .trend-record ul li .sec .active.six,
+    .trend-record ul li .sec .active.eight {
+      background: red;
+      border-color: red;
+      z-index: 1;
+    }
+
+    .trend-record ul li .sec .active.one,
+    .trend-record ul li .sec .active.three,
+    .trend-record ul li .sec .active.seven,
+    .trend-record ul li .sec .active.nine {
+      background: green;
+      border-color: green;
+      z-index: 1;
+    }
+
+    .color-yellow {
+      color: orange !important;
+    }
+
+    .color-blue {
+      color: #00d5ff !important;
+    }
+    #showchart{
+      display: none;
+    }
+    #showchart.active{
+      display: block;
+    }
+  </style>
+
+  <style>
+    .stat-table {
+      background: #FAE59F;
+      /* Fallback for browsers that do not support gradients */
+      background: -webkit-linear-gradient(to right, #FAE59F, #FAE59F);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #FAE59F, #FAE59F);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      border-radius: 8px;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .stat-table th,
+    .stat-table td {
+      padding: 8px 0px;
+      text-align: center;
+      font-size: xx-small;
+    }
+
+    .stat-table th {
+      background: #FAE59F;
+      border-bottom: 1px solid #FAE59F;
+    }
+
+    .stat-table th:first-child {
+      border-radius: 5px 0 0 0;
+    }
+
+    .stat-table th:last-child {
+      border-radius: 0 5px 0 0;
+    }
+
+    .stat-row {
+      background: black;
+   
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      margin-bottom: 4px;
+      border-radius: 4px;
+    }
+
+    .number-cell {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      border-radius: 50%;
+      background: #FAE59F;
+      border: 1px solid #777;
+      /* Slight border for definition */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      /* Soft shadow for depth */
+      color: black;
+    }
+
+    .stat-header {
+      font-weight: bold;
+      text-align: left;
+      padding-left: 12px;
+    }
+
+    #app {
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <div data-v-a9660e98="" class="tab c-row c-row-between">
+    <div data-v-a9660e98="" class="li c-row c-row-center">
+      <span data-v-a9660e98="" class="txt action" onclick="removeClass()">
+        Game History
+      </span>
+    </div>
+    <div data-v-a9660e98="" class="li c-row c-row-center">
+      <span data-v-a9660e98="" class="txt"  onclick="removeClass()"> My Bets </span>
+    </div>
+    <div data-v-a9660e98="" class="li c-row c-row-center">
+      <span data-v-a9660e98="" class="txt " onclick="addClass()"> Trend </span>
+    </div>
+
+  </div>
+  <div data-v-a9660e98="" class="con-box">
+    <div data-v-a9660e98="" class="list m-t-10">
+      <div data-v-a9660e98="" class="wrap">
+        <div data-v-a9660e98="" class="c-tc van-row">
+         
+          <div data-v-a9660e98="" class="van-col van-col--5">Period</div>
+          <div data-v-a9660e98="" class="van-col van-col--5">Block</div>
+          <div data-v-a9660e98="" class="van-col van-col--5">Block Time</div>
+          <div data-v-a9660e98="" class="van-col van-col--5">Hash </div>
+
+          <div data-v-a9660e98="" class="van-col van-col--5">
+              Result
+          </div>
+          
+        </div>
+      </div>
+      <div data-v-a9660e98="">
+        <div data-v-a9660e98="" class="hb"></div>
+      </div>
+      <div data-v-a9660e98="" class="list-fooder"></div>
+    </div>
+    <div data-v-a9660e98="" class="page-nav c-row c-row-center c-tc">
+      <div data-v-a9660e98="" class="arr c-row c-row-middle-center block-click">
+        <i data-v-a9660e98="" class="van-icon van-icon-arrow-left icon" style="font-size: 20px">
+          <!---->
+        </i>
+      </div>
+      <div data-v-a9660e98="" class="number"></div>
+      <div data-v-a9660e98="" class="arr c-row c-row-middle-center action">
+        <i data-v-a9660e98="" class="van-icon van-icon-arrow icon action" style="font-size: 20px">
+          <!---->
+        </i>
+      </div>
+    </div>
+  </div>
+  <div data-v-a9660e98="" class="con-box p-b-20" style="display: none">
+
+    <div data-v-a9660e98="" class="list m-t-10">
+      <div data-v-a9660e98="" class="p-t-5 p-b-5" id="history-order">
+
+      </div>
+      <div data-v-a9660e98="" class="list-fooder"></div>
+    </div>
+    <!---->
+    <div data-v-a9660e98="" class="page-nav c-row c-row-center c-tc">
+      <div data-v-a9660e98="" class="arr c-row c-row-middle-center">
+        <i data-v-a9660e98="" class="van-icon van-icon-arrow-left icon" style="font-size: 20px">
+          <!---->
+        </i>
+      </div>
+      <div data-v-a9660e98="" class="number"></div>
+      <div data-v-a9660e98="" class="arr c-row c-row-middle-center action">
+        <i data-v-a9660e98="" class="van-icon van-icon-arrow icon action" style="font-size: 20px">
+          <!---->
+        </i>
+      </div>
+    </div>
+  </div>
+  <div data-v-a9660e98="" class="con-box p-b-20" style="display: block" >
+    <div data-v-a9660e98="" class="list m-t-10" id="showchart">
+
+      <table class="stat-table">
+        <thead>
+          <tr>
+            <th>Period</th>
+            <th>Statistic (last 100 Periods)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="stat-row">
+            <td class="stat-header">Total Number</td>
+            <td>
+              <div class="number-cell">0</div>
+              <div class="number-cell">1</div>
+              <div class="number-cell">2</div>
+              <div class="number-cell">3</div>
+              <div class="number-cell">4</div>
+              <div class="number-cell">5</div>
+              <div class="number-cell">6</div>
+              <div class="number-cell">7</div>
+              <div class="number-cell">8</div>
+              <div class="number-cell">9</div>
+            </td>
+          </tr>
+          <tr class="stat-row">
+            <td class="stat-header">Winning </td>
+            <td>
+              <div id="Winning_0" class="number-cell">0</div>
+              <div id="Winning_1" class="number-cell">1</div>
+              <div id="Winning_2" class="number-cell">2</div>
+              <div id="Winning_3" class="number-cell">3</div>
+              <div id="Winning_4" class="number-cell">4</div>
+              <div id="Winning_5" class="number-cell">5</div>
+              <div id="Winning_6" class="number-cell">6</div>
+              <div id="Winning_7" class="number-cell">7</div>
+              <div id="Winning_8" class="number-cell">8</div>
+              <div id="Winning_9" class="number-cell">9</div>
+            </td>
+          </tr>
+          <tr class="stat-row">
+            <td class="stat-header">Average Missing</td>
+            <td>
+              <span class="number-cell">0</span>
+              <span class="number-cell">1</span>
+              <span class="number-cell">2</span>
+              <span class="number-cell">3</span>
+              <span class="number-cell">4</span>
+              <span class="number-cell">5</span>
+              <span class="number-cell">6</span>
+              <span class="number-cell">7</span>
+              <span class="number-cell">8</span>
+              <span class="number-cell">9</span>
+            </td>
+          </tr>
+          <tr class="stat-row">
+            <td class="stat-header">Frequency</td>
+            <td>
+              <span class="number-cell">0</span>
+              <span class="number-cell">1</span>
+              <span class="number-cell">2</span>
+              <span class="number-cell">3</span>
+              <span class="number-cell">4</span>
+              <span class="number-cell">5</span>
+              <span class="number-cell">6</span>
+              <span class="number-cell">7</span>
+              <span class="number-cell">8</span>
+              <span class="number-cell">9</span>
+            </td>
+          </tr>
+          <tr class="stat-row">
+            <td class="stat-header">Max consecutive</td>
+            <td>
+              <span class="number-cell">0</span>
+              <span class="number-cell">1</span>
+              <span class="number-cell">2</span>
+              <span class="number-cell">3</span>
+              <span class="number-cell">4</span>
+              <span class="number-cell">5</span>
+              <span class="number-cell">6</span>
+              <span class="number-cell">7</span>
+              <span class="number-cell">8</span>
+              <span class="number-cell">9</span>
+            </td>
+          </tr>
+          <!-- ... More rows for Winning number, Missing, etc. ... -->
+        </tbody>
+      </table>
+      <div class="container charts">
+        <div class="trend-record">
+          <ul id="trendList">
+            <li>
+              <div class="first">20240327010558</div>
+              <div class="sec">
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span class="active">3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+              </div>
+              <div class="third">B</div>
+            </li>
+            <li>
+              <div class="first">20240327010558</div>
+              <div class="sec">
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span class="active">7</span>
+                <span>8</span>
+                <span>9</span>
+              </div>
+              <div class="third">B</div>
+            </li>
+            <li>
+              <div class="first">20240327010558</div>
+              <div class="sec">
+                <span>0</span>
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+              </div>
+              <div class="third">B</div>
+            </li>
+            <li>
+              <div class="first">20240327010558</div>
+              <div class="sec">
+                <span>0</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span class="active">9</span>
+              </div>
+              <div class="third">B</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div data-v-a9660e98="" class="list-fooder"></div>
+
+      <div data-v-a9660e98="" class="page-nav c-row c-row-center c-tc">
+        <div data-v-a9660e98="" class="arr c-row c-row-middle-center block-click">
+          <i data-v-a9660e98="" class="van-icon van-icon-arrow-left icon" style="font-size: 20px">
+            <!---->
+          </i>
+        </div>
+        <div data-v-a9660e98="" class="number"></div>
+        <div data-v-a9660e98="" class="arr c-row c-row-middle-center action">
+          <i data-v-a9660e98="" class="van-icon van-icon-arrow icon action" style="font-size: 20px">
+            <!---->
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // document.addEventListener("DOMContentLoaded", function() {
+      function chartFun() {
+        const trendList = document.getElementById('trendList');
+        const activeElements = document.querySelectorAll('.active');
+        console.log(activeElements)
+        const svgns = "http://www.w3.org/2000/svg";
+        const svg = document.createElementNS(svgns, "svg");
+        svg.setAttribute("width", "100%");
+        svg.setAttribute("height", "100%");
+        svg.setAttribute("class", "svg-line");
+
+        for (let i = 2; i < activeElements.length - 1; i++) {
+          const firstActive = activeElements[i];
+          const secondActive = activeElements[i + 1];
+
+          const line = document.createElementNS(svgns, "line");
+          line.setAttribute("x1", `${firstActive.offsetLeft + firstActive.offsetWidth / 2}px`);
+          line.setAttribute("y1", `${firstActive.offsetTop + firstActive.offsetHeight / 2}px`);
+          line.setAttribute("x2", `${secondActive.offsetLeft + secondActive.offsetWidth / 2}px`);
+          line.setAttribute("y2", `${secondActive.offsetTop + secondActive.offsetHeight / 2}px`);
+          line.setAttribute("stroke", "red");
+          line.setAttribute("stroke-width", "2");
+
+          svg.appendChild(line);
+        }
+
+        trendList.appendChild(svg);
+      }
+
+      chartFun()
+    // });
+
+    function removeClass() {
+  var element = document.getElementById("showchart");
+  element.classList.remove("active");
+}
+function addClass() {
+      var element = document.getElementById("showchart");
+      element.classList.add("active");
+    }
+  </script>
+
+  <script>
+    let labels1;
+    let amounts1;
+    let data;
+    let canvas;
+    let ctx;
+    let gradient;
+    let padding;
+    let spaceBetween;
+    let x;
+    let y;
+    let prevX;
+    let prevY;
+    let value;
+    let index;
+  </script>
+  </script>
+</body>
+
+</html>
